@@ -455,7 +455,7 @@ export default function WrapTech() {
             lineHeight: 1.6,
             animation: "fadeUp 0.8s ease 0.6s both",
           }}>
-            Vehicle Wrapping, Paint Protection Film and Detailing.
+            Αλλαγή Χρώματος Οχημάτων, Μεμβράνες Προστασίας Χρώματος και Εξειδικευμένη Περιποίηση.
           </p>
 
           <div style={{
@@ -815,7 +815,7 @@ export default function WrapTech() {
                   onMouseLeave={e => { e.target.style.transform = "scale(1)"; e.target.style.boxShadow = "0 0 40px rgba(220,38,38,0.3)"; }}
                 >Book Consultation</button>
               </a>
-              <a href="tel:+15551234567" style={{ textDecoration: "none" }}>
+              <a href="tel:+30 2310 304 583" style={{ textDecoration: "none" }}>
                 <button style={{
                   background: "transparent",
                   color: "#fff",
