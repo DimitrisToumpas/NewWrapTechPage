@@ -851,7 +851,80 @@ export default function WrapTech() {
 
       {/* ─────────── FOOTER ─────────── */}
 
+         <footer style={{
+        padding: "3rem 2rem",
+        borderTop: "1px solid rgba(255,255,255,0.06)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        flexWrap: "wrap",
+        gap: "1rem",
+      }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+          <div style={{
+            width: 28, height: 28, borderRadius: 6,
+            background: "linear-gradient(135deg, #DC2626, #EF4444)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontSize: 12, fontWeight: 900, color: "#000",
+          }}>W</div>
+          <span style={{ fontWeight: 800, fontSize: "0.95rem" }}>WrapTech</span>
+        </div>
+        
+        <div style={{ color: "#444", fontSize: "0.8rem" }}>© 2026 WrapTech. All rights reserved.</div>
+        
+        <div style={{ display: "flex", gap: "1.5rem" }}>
+          {["Privacy", "Terms", "Instagram"].map((l) => (
+            <a 
+              key={l} 
+              href="https://share.google/kacKTfhbmqvG6RWdi" 
+              style={{ 
+                fontSize: "0.8rem", 
+                textDecoration: "none",
+                color: "#555",
+                transition: "color 0.2s"
+              }}
+              onMouseEnter={e => e.target.style.color = "#DC2626"}
+              onMouseLeave={e => e.target.style.color = "#555"}
+            >
+              {l}
+            </a>
+          ))}
+        </div> 
+      </footer>
 
+      <style>{`
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scrollPulse {
+          0%, 100% { opacity: 0.4; transform: scaleY(1); }
+          50% { opacity: 1; transform: scaleY(1.2); }
+        }
+        @keyframes ringPulse {
+          from { opacity: 0.4; transform: translate(-50%, -50%) scale(0.98); }
+          to { opacity: 1; transform: translate(-50%, -50%) scale(1.02); }
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { background: #080808; }
+        @media (max-width: 640px) {
+          .desktop-nav { display: none !important; }
+        }
+        @media (max-width: 900px) {
+          div[style*="repeat(3, 1fr)"] {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        @media (max-width: 500px) {
+          div[style*="repeat(3, 1fr)"] {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
+</div> 
+  
+  
 function ServiceCard({ service }) {
   const [hovered, setHovered] = useState(false);
   return (
