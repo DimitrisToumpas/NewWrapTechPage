@@ -5,26 +5,26 @@ const NAV_LINKS = ["Services", "Portfolio", "About", "Contact"];
 const SERVICES = [
   {
     icon: "🎨",
-    title: "Vehicle Wrapping",
-    desc: "Complete color change wraps, custom designs, and commercial fleet graphics using premium 3M and Avery Dennison vinyl films.",
+    title: "Μεμβράνες Αλλαγής Χρώματος",
+    desc: "Ολική – Μερική κάλυψη οχημάτων, Εσωτερικών επενδύσεων οχημάτων, Διαφημιστική κάλυψη οχημάτων",
     tag: "Popular",
   },
   {
     icon: "🛡️",
-    title: "Paint Protection Film",
-    desc: "Self-healing PPF that guards your paint against rock chips, scratches, and environmental damage with an invisible shield.",
+    title: "Αντιηλιακές Μεμβράνες",
+    desc: "Οι μεμβράνες φαναριών υφίστανται είτε για να προστατεύσουν τα φανάρια του οχήματός σας είτε για να το διακοσμήσουν αλλάζοντας το χρώμα ακόμα και το σχέδιό τους.",
     tag: "PPF",
   },
   {
-    icon: "💎",
-    title: "Ceramic Coating",
+    icon: "🏙️",
+    title: "Εφαρμογές Κτηρίων",
     desc: "Professional-grade nano-ceramic coating delivering hydrophobic protection, mirror-like gloss, and years of effortless maintenance.",
     tag: "Pro",
   },
   {
     icon: "✨",
-    title: "Premium Detailing",
-    desc: "Meticulous interior and exterior detailing that restores and maintains your vehicle to concours-level perfection.",
+    title: "Best Car Wrapping Services",
+    desc: "Περιποίηση & Ηλεκτροστατική βαφή ζαντών.",
     tag: "Detail",
   },
 ];
@@ -791,7 +791,7 @@ export default function WrapTech() {
               maxWidth: 480,
               margin: "0 auto 3rem",
             }}>
-              Schedule a free consultation with our specialists and discover what WrapTech can do for your vehicle.
+              Κλείστε ένα ραντεβού με τους επαγγελματίες μας και δες τι μπορεί η WrapTech να κάνει για το όχημα σου.
             </p>
           </ScrollReveal>
 
@@ -871,8 +871,7 @@ export default function WrapTech() {
         <div style={{ color: "#444", fontSize: "0.8rem" }}>© 2026 WrapTech. All rights reserved.</div>
         <div style={{ display: "flex", gap: "1.5rem" }}>
           {["Privacy", "Terms", "Instagram"].map((l) => (
-            <a key={l} href="#" style={{
-              color: "#555", fontSize: "0.8rem", textDecoration: "none",
+            <a key={l} href="https://share.google/kacKTfhbmqvG6RWdi", fontSize: "0.8rem", textDecoration: "none",
               transition: "color 0.2s",
             }}
               onMouseEnter={e => e.target.style.color = "#DC2626"}
