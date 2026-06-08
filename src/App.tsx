@@ -1,7 +1,7 @@
-import WrapTech from './WrapTech';
+import WrapTech from './WrapTechRed';
 
 function App() {
-  return <WrapTech />;
+  return <WrapTechRed />;
 }
 
 export default App;
