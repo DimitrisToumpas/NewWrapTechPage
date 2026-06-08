@@ -923,7 +923,7 @@ export default function WrapTech() {
         }
       `}</style>
 </div> 
-  
+  )
   
 function ServiceCard({ service }) {
   const [hovered, setHovered] = useState(false);
