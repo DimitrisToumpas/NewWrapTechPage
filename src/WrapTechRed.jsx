@@ -851,6 +851,7 @@ export default function WrapTech() {
 
       {/* ─────────── FOOTER ─────────── */}
       <footer style={{
+         <footer style={{
         padding: "3rem 2rem",
         borderTop: "1px solid rgba(255,255,255,0.06)",
         display: "flex",
@@ -868,25 +869,27 @@ export default function WrapTech() {
           }}>W</div>
           <span style={{ fontWeight: 800, fontSize: "0.95rem" }}>WrapTech</span>
         </div>
+        
         <div style={{ color: "#444", fontSize: "0.8rem" }}>© 2026 WrapTech. All rights reserved.</div>
+        
         <div style={{ display: "flex", gap: "1.5rem" }}>
           {["Privacy", "Terms", "Instagram"].map((l) => (
-  <a 
-    key={l} 
-    href="https://share.google/kacKTfhbmqvG6RWdi" 
-    style={{ 
-      fontSize: "0.8rem", 
-      textDecoration: "none",
-      color: "#555",
-      transition: "color 0.2s"
-    }}
-    onMouseEnter={e => e.target.style.color = "#DC2626"}
-    onMouseLeave={e => e.target.style.color = "#555"}
-  >
-    {l}
-  </a>
-))}
-
+            <a 
+              key={l} 
+              href="https://share.google/kacKTfhbmqvG6RWdi" 
+              style={{ 
+                fontSize: "0.8rem", 
+                textDecoration: "none",
+                color: "#555",
+                transition: "color 0.2s"
+              }}
+              onMouseEnter={e => e.target.style.color = "#DC2626"}
+              onMouseLeave={e => e.target.style.color = "#555"}
+            >
+              {l}
+            </a>
+          ))}
+        </div> {/* <-- Κλείνει το div των links */}
       </footer>
 
       <style>{`
@@ -921,7 +924,6 @@ export default function WrapTech() {
       `}</style>
     </div>
   );
-}
 
 function ServiceCard({ service }) {
   const [hovered, setHovered] = useState(false);
