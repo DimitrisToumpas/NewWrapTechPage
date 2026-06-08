@@ -871,7 +871,7 @@ export default function WrapTech() {
         <div style={{ color: "#444", fontSize: "0.8rem" }}>© 2026 WrapTech. All rights reserved.</div>
         <div style={{ display: "flex", gap: "1.5rem" }}>
           {["Privacy", "Terms", "Instagram"].map((l) => (
-            <a key={l} href="https://share.google/kacKTfhbmqvG6RWdi", fontSize: "0.8rem", textDecoration: "none",
+            <a key={l} href="https://share.google/kacKTfhbmqvG6RWdi" fontSize: "0.8rem", textDecoration: "none",
               transition: "color 0.2s",
             }}
               onMouseEnter={e => e.target.style.color = "#DC2626"}
