@@ -1,4 +1,4 @@
-import WrapTech from './WrapTechRed';
+import WrapTechRed from './WrapTechRed';
 
 function App() {
   return <WrapTechRed />;
