@@ -850,7 +850,6 @@ export default function WrapTech() {
       </section>
 
       {/* ─────────── FOOTER ─────────── */}
-      <footer style={{
          <footer style={{
         padding: "3rem 2rem",
         borderTop: "1px solid rgba(255,255,255,0.06)",
