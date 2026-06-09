@@ -747,7 +747,6 @@ export default function WrapTech() {
   <img
     src={logo}
     alt="WrapTech Logo"
-    className="logo-hero"
     style={{
       height: "auto",
       objectFit: "contain",
