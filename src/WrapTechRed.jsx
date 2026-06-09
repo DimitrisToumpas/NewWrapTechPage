@@ -427,7 +427,7 @@ export default function WrapTech() {
             animation: "fadeUp 0.8s ease 0.2s both",
           }}>
             <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#DC2626" }} />
-            Automotive Transformation
+            Μεταμόρφωση αυτοκινήτου
           </div>
 
           <h1 style={{
@@ -570,8 +570,9 @@ export default function WrapTech() {
               maxWidth: 600,
               margin: "0 auto",
             }}>
-              Every vehicle that enters our shop receives obsessive attention to detail,
-              precision craftsmanship, and the kind of transformation that turns heads on every street.
+              Στόχος μας είναι η άριστη εξυπηρέτησή σας,
+              με σωστή καθοδήγηση και επιλογή ποιοτικών επώνυμων υλικών,
+              σε ένα φιλικό και ευχάριστο περιβάλλον.
             </p>
           </ScrollReveal>
         </div>
@@ -820,10 +821,6 @@ export default function WrapTech() {
   </ScrollReveal>
 </section>
 
-      
-
-      
-
       {/* ─────────── CONTACT CTA ─────────── */}
       <section id="contact" style={{
         minHeight: "100vh",
@@ -921,7 +918,7 @@ export default function WrapTech() {
                 }}
                   onMouseEnter={e => { e.target.style.borderColor = "#DC2626"; e.target.style.color = "#DC2626"; }}
                   onMouseLeave={e => { e.target.style.borderColor = "rgba(255,255,255,0.2)"; e.target.style.color = "#fff"; }}
-                >Call Us</button>
+                >Καλέστε μας</button>
               </a>
             </div>
           </ScrollReveal>
