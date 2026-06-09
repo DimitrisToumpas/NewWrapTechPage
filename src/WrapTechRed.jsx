@@ -911,7 +911,7 @@ export default function WrapTech() {
 
           <ScrollReveal delay={0.3}>
             <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", marginBottom: "3rem" }}>
-              <a href="mailto:hello@wraptech.com" style={{ textDecoration: "none" }}>
+              <a href="mailto:info@wraptech.gr" style={{ textDecoration: "none" }}>
                 <button style={{
                   background: "linear-gradient(135deg, #DC2626, #EF4444)",
                   color: "#000",
