@@ -476,7 +476,7 @@ export default function WrapTech() {
             }}
               onMouseEnter={e => { e.target.style.background = "#DC2626"; e.target.style.transform = "scale(1.04)"; }}
               onMouseLeave={e => { e.target.style.background = "#fff"; e.target.style.transform = "scale(1)"; }}
-            >View Our Work</button>
+            >Δείτε τη δουλειά μας</button>
             <button onClick={() => scrollTo("contact")} style={{
               background: "transparent",
               color: "#fff",
