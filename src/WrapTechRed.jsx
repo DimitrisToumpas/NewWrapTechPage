@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-
+import logo from "./assets/WrapTechLogo.jpg";
 const NAV_LINKS = ["Services", "Portfolio", "About", "Contact"];
 
 const SERVICES = [
@@ -742,7 +742,7 @@ export default function WrapTech() {
 >
   <ScrollReveal>
     <img
-      src="/logo.png"
+      src={logo}
       alt="WrapTech Logo"
       style={{
         width: "180px",
