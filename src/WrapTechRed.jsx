@@ -732,6 +732,105 @@ export default function WrapTech() {
         </div>
       </section>
 
+      {/* ─────────── LOCATION ─────────── */}
+<section
+  style={{
+    padding: "6rem 2rem",
+    background: "#080808",
+    textAlign: "center",
+  }}
+>
+  <ScrollReveal>
+    <img
+      src="/logo.png"
+      alt="WrapTech Logo"
+      style={{
+        width: "180px",
+        maxWidth: "80%",
+        marginBottom: "2rem",
+      }}
+    />
+
+    <div
+      style={{
+        maxWidth: "700px",
+        margin: "0 auto",
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+        gap: "2rem",
+      }}
+    >
+      <div
+        style={{
+          padding: "2rem",
+          background: "rgba(255,255,255,0.02)",
+          border: "1px solid rgba(255,255,255,0.06)",
+          borderRadius: "16px",
+        }}
+      >
+        <h3
+          style={{
+            color: "#DC2626",
+            marginBottom: "1rem",
+            fontSize: "1.1rem",
+          }}
+        >
+          📍 Διεύθυνση
+        </h3>
+
+        <p
+          style={{
+            color: "#ccc",
+            lineHeight: 1.8,
+          }}
+        >
+          Τζων Κέννεντυ 12
+          <br />
+          Πυλαία 555 35
+        </p>
+      </div>
+
+      <div
+        style={{
+          padding: "2rem",
+          background: "rgba(255,255,255,0.02)",
+          border: "1px solid rgba(255,255,255,0.06)",
+          borderRadius: "16px",
+        }}
+      >
+        <h3
+          style={{
+            color: "#DC2626",
+            marginBottom: "1rem",
+            fontSize: "1.1rem",
+          }}
+        >
+          🕒 Ωράριο Λειτουργίας
+        </h3>
+
+        <p
+          style={{
+            color: "#ccc",
+            lineHeight: 1.8,
+          }}
+        >
+          Δευτέρα – Παρασκευή
+          <br />
+          09:00 – 18:30
+          <br />
+          <br />
+          Σάββατο
+          <br />
+          09:00 – 15:30
+        </p>
+      </div>
+    </div>
+  </ScrollReveal>
+</section>
+
+
+      
+
       {/* ─────────── CONTACT CTA ─────────── */}
       <section id="contact" style={{
         minHeight: "100vh",
