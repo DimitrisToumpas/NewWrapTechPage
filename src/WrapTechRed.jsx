@@ -33,7 +33,7 @@ const SERVICES = [
 ];
 
 const STATS = [
-  { value: 1200, suffix: "+", label: "Οχήματα που Εξυπηρετήθηκαν", overflow: "visible"},
+  { value: 1200, suffix: "+", label: "Οχήματα που Εξυπηρετήθηκαν"},
   { value: 8, suffix: "+", label: "Χρόνια Εμπειρίας" },
   { value: 250, suffix: "+", label: "Τοποθετήσεις PPF" },
   { value: 4.9, suffix: "", label: "Αξιολόγηση Πελατών" },
@@ -216,7 +216,7 @@ function BeforeAfterSlider() {
         maxWidth: 800,
         margin: "0 auto",
         borderRadius: 16,
-        overflow: "hidden",
+        overflow: "visible",
         cursor: "ew-resize",
         userSelect: "none",
         border: "1px solid rgba(220,38,38,0.3)",
