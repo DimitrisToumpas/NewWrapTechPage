@@ -30,19 +30,19 @@ const SERVICES = [
 ];
 
 const STATS = [
-  { value: 1200, suffix: "+", label: "Vehicles Wrapped" },
-  { value: 8, suffix: "+", label: "Years Experience" },
-  { value: 250, suffix: "+", label: "PPF Installations" },
-  { value: 4.9, suffix: "", label: "Customer Rating" },
+  { value: 1200, suffix: "+", label: "Οχήματα που Εξυπηρετήθηκαν" },
+  { value: 8, suffix: "+", label: "Χρόνια Εμπειρίας" },
+  { value: 250, suffix: "+", label: "Τοποθετήσεις PPF" },
+  { value: 4.9, suffix: "", label: "Αξιολόγηση Πελατών" },
 ];
 
 const TESTIMONIALS = [
   {
-    name: "Marcus Chen",
-    role: "Ferrari F8 Owner",
-    initials: "MC",
+    name: "Νικόλαος Παπαδόπουλος",
+    role: "Citroën C4 Owner",
+    initials: "ΝΠ",
     rating: 5,
-    text: "WrapTech transformed my F8 with a deep crimson wrap. The attention to detail is unmatched — every panel is perfect. My car stops traffic wherever it goes.",
+    text: "WrapTech transformed my C4 with a deep crimson wrap. The attention to detail is unmatched — every panel is perfect. My car stops traffic wherever it goes.",
     color: "#DC2626",
   },
   {
