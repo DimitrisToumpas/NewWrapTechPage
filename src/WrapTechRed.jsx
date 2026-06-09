@@ -780,24 +780,37 @@ export default function WrapTech() {
       }}
     >
 
-            <div
-        style={{
-          padding: "2rem",
-          background: "rgba(255,255,255,0.02)",
-          border: "1px solid rgba(255,255,255,0.06)",
-          borderRadius: "16px",
-        }}
-      >
-        <h3 style={{ color: "#DC2626", marginBottom: "1rem" }}>
-          📍 Διεύθυνση
-        </h3>
+            <a 
+  href="https://www.google.com/maps/search/?api=1&query=Τζων+Κέννεντυ+12,+Πυλαία+555+35"
+  target="_blank" 
+  rel="noopener noreferrer"
+  style={{ textDecoration: "none", display: "block" }}
+>
+  <div
+    style={{
+      padding: "2rem",
+      background: "rgba(255,255,255,0.02)",
+      border: "1px solid rgba(255,255,255,0.06)",
+      borderRadius: "16px",
+      cursor: "pointer", // Δείχνει στον χρήστη ότι το πλαίσιο είναι κλικάσιμο
+      transition: "background 0.2s ease", // Προαιρετικό εφέ για πιο ωραίο hover
+    }}
+    // Προαιρετικό εφέ hover για να φαίνεται ότι επιλέγεται
+    onMouseEnter={(e) => e.currentTarget.style.background = "rgba(255,255,255,0.05)"}
+    onMouseLeave={(e) => e.currentTarget.style.background = "rgba(255,255,255,0.02)"}
+  >
+    <h3 style={{ color: "#DC2626", marginBottom: "1rem" }}>
+      📍 Διεύθυνση
+    </h3>
 
-        <p style={{ color: "#ccc", lineHeight: 1.8 }}>
-          Τζων Κέννεντυ 12
-          <br />
-          Πυλαία 555 35
-        </p>
-      </div>
+    <p style={{ color: "#ccc", lineHeight: 1.8 }}>
+      Τζων Κέννεντυ 12
+      <br />
+      Πυλαία 555 35
+    </p>
+  </div>
+</a>
+
 
             <div
         style={{
