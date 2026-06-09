@@ -1185,18 +1185,18 @@ function PortfolioCard({ item }) {
     overflow: "hidden",
   }}
 >
-  <img
-    src="/charger.jpg"
-    alt={item.label}
-    style={{
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      opacity: hovered ? 0.9 : 0.75,
-      transform: hovered ? "scale(1.05)" : "scale(1)",
-      transition: "all 0.35s ease",
-    }}
-  />
+<img
+  src={item.image}
+  alt={item.label}
+  style={{
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    opacity: hovered ? 0.9 : 0.75,
+    transform: hovered ? "scale(1.05)" : "scale(1)",
+    transition: "all 0.35s ease",
+  }}
+/>
 </div>
       
       <div style={{
