@@ -781,7 +781,7 @@ export default function WrapTech() {
     >
 
             <a 
-  href="https://www.google.com/maps/search/?api=1&query=Τζων+Κέννεντυ+12,+Πυλαία+555+35"
+  href="https://www.google.com/maps/search/?api=1&query=%CE%A4%CE%B6%CF%89%CE%BD+%CE%9A%CE%AD%CE%BD%CE%BD%CE%B5%CE%BD%CF%84%CF%85+12%2C+%CE%A0%CF%85%CE%BB%CE%B1%CE%AF%CE%B1+555+35"
   target="_blank" 
   rel="noopener noreferrer"
   style={{ textDecoration: "none", display: "block" }}
@@ -790,14 +790,21 @@ export default function WrapTech() {
     style={{
       padding: "2rem",
       background: "rgba(255,255,255,0.02)",
-      border: "1px solid rgba(255,255,255,0.06)",
+      border: "1px solid #DC2626", // Κόκκινο περίγραμμα εξ ορισμού
       borderRadius: "16px",
-      cursor: "pointer", // Δείχνει στον χρήστη ότι το πλαίσιο είναι κλικάσιμο
-      transition: "background 0.2s ease", // Προαιρετικό εφέ για πιο ωραίο hover
+      cursor: "pointer",
+      transition: "all 0.2s ease", // Ομαλή μετάβαση για το border και το background
     }}
-    // Προαιρετικό εφέ hover για να φαίνεται ότι επιλέγεται
-    onMouseEnter={(e) => e.currentTarget.style.background = "rgba(255,255,255,0.05)"}
-    onMouseLeave={(e) => e.currentTarget.style.background = "rgba(255,255,255,0.02)"}
+    // Όταν το ποντίκι μπαίνει, το περίγραμμα φωτίζει και το background αλλάζει ελαφρώς
+    onMouseEnter={(e) => {
+      e.currentTarget.style.border = "1px solid #EF4444";
+      e.currentTarget.style.background = "rgba(220, 38, 38, 0.05)"; // Ελαφρύ κόκκινο tint στο background
+    }}
+    // Όταν το ποντίκι βγαίνει, επιστρέφει στην αρχική κατάσταση
+    onMouseLeave={(e) => {
+      e.currentTarget.style.border = "1px solid #DC2626";
+      e.currentTarget.style.background = "rgba(255,255,255,0.02)";
+    }}
   >
     <h3 style={{ color: "#DC2626", marginBottom: "1rem" }}>
       📍 Διεύθυνση
@@ -810,7 +817,6 @@ export default function WrapTech() {
     </p>
   </div>
 </a>
-
 
             <div
         style={{
