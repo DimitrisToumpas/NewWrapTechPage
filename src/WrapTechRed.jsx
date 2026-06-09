@@ -327,7 +327,7 @@ export default function WrapTech() {
         borderBottom: navSolid ? "1px solid rgba(255,255,255,0.06)" : "none",
         transition: "all 0.4s ease",
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+        {/* <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
           <div style={{
             width: 32, height: 32, borderRadius: 8,
             background: "linear-gradient(135deg, #DC2626, #EF4444)",
@@ -335,7 +335,7 @@ export default function WrapTech() {
             fontSize: 14, fontWeight: 900, color: "#000",
           }}>W</div>
           <span style={{ fontWeight: 800, fontSize: "1.1rem", letterSpacing: "-0.02em" }}>WrapTech</span>
-        </div>
+        </div>*/}
 
         {/* Desktop Links */}
         <div style={{ display: "flex", gap: "2.5rem" }} className="desktop-nav">
