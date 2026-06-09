@@ -735,7 +735,6 @@ export default function WrapTech() {
 {/* ─────────── LOGO ─────────── */}
 <section
   style={{
-    height: "100vh",
     width: "100%",
     display: "flex",
     alignItems: "center",
