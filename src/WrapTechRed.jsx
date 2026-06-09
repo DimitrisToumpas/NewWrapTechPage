@@ -143,7 +143,7 @@ function useCountUp(target, duration = 2000, start = false) {
   return count;
 }
 
-function StatCard({ stat, inView }) {
+{/*function StatCard({ stat, inView }) {
   const count = useCountUp(stat.value, 2000, inView);
   return (
     <div style={{
@@ -170,6 +170,60 @@ function StatCard({ stat, inView }) {
         textTransform: "uppercase",
         fontWeight: 500,
       }}>{stat.label}</div>
+    </div>
+  );
+} */}
+
+
+function StatCard({ stat, inView }) {
+  const count = useCountUp(stat.value, 2000, inView);
+
+  return (
+    <div style={{ textAlign: "center", padding: "2rem 1rem" }}>
+      
+      <div style={{
+        fontSize: "clamp(2.5rem, 6vw, 4rem)",
+        fontWeight: 800,
+        letterSpacing: "-0.02em",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "baseline",
+        gap: "0.2rem",
+        marginBottom: "0.5rem",
+      }}>
+        
+        {/* NUMBER */}
+        <span style={{
+          background: "linear-gradient(135deg, #fff 0%, #DC2626 100%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          lineHeight: 1.2,
+        }}>
+          {stat.value % 1 !== 0
+            ? count.toFixed(1)
+            : count.toLocaleString()}
+        </span>
+
+        {/* + SYMBOL */}
+        <span style={{
+          color: "#DC2626",
+          fontWeight: 800,
+          lineHeight: 1.2,
+        }}>
+          {stat.suffix}
+        </span>
+
+      </div>
+
+      <div style={{
+        color: "#888",
+        fontSize: "0.9rem",
+        letterSpacing: "0.1em",
+        textTransform: "uppercase",
+        fontWeight: 500,
+      }}>
+        {stat.label}
+      </div>
     </div>
   );
 }
@@ -216,7 +270,7 @@ function BeforeAfterSlider() {
         maxWidth: 800,
         margin: "0 auto",
         borderRadius: 16,
-        overflow: "visible",
+        overflow: "hidden",
         cursor: "ew-resize",
         userSelect: "none",
         border: "1px solid rgba(220,38,38,0.3)",
