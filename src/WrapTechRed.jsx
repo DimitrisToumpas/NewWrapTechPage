@@ -949,7 +949,14 @@ export default function WrapTech() {
         flexWrap: "wrap",
         gap: "1rem",
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+
+       <div style={{ display: "flex", alignItems: "center" }}>
+        <span style={{ fontWeight: 800, fontSize: "0.95rem" }}>
+        <span style={{ color: "#DC2626" }}>W</span>rapTech
+       </span>
+       </div>
+           
+           {/* <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
           <div style={{
             width: 28, height: 28, borderRadius: 6,
             background: "linear-gradient(135deg, #DC2626, #EF4444)",
@@ -957,7 +964,7 @@ export default function WrapTech() {
             fontSize: 12, fontWeight: 900, color: "#000",
           }}>W</div>
           <span style={{ fontWeight: 800, fontSize: "0.95rem" }}>WrapTech</span>
-        </div>
+        </div> */}
         
         <div style={{ color: "#444", fontSize: "0.8rem" }}>© 2026 WrapTech. All rights reserved.</div>
         
