@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import logo from "./assets/WrapTechLogo.jpg";
 const NAV_LINKS = ["Services", "Portfolio", "About", "Contact"];
+import chargerImage from "./assets/charger.jpg";
 
 const SERVICES = [
   {
@@ -1128,22 +1129,27 @@ function PortfolioCard({ item }) {
         transform: hovered ? "scale(1.01)" : "scale(1)",
       }}
     >
-      {/* Car silhouette */}
-      <div style={{
-        position: "absolute",
-        inset: 0,
-        display: "flex", alignItems: "center", justifyContent: "center",
-        overflow: "hidden",
-      }}>
-        <div style={{
-          fontSize: isLarge ? 80 : 60,
-          opacity: hovered ? 0.25 : 0.12,
-          transform: `scale(${hovered ? 1.05 : 1})`,
-          transition: "all 0.35s ease",
-          filter: "drop-shadow(0 0 20px rgba(220,38,38,0.3))",
-        }}>🚗</div>
-      </div>
-
+   <div
+  style={{
+    position: "absolute",
+    inset: 0,
+    overflow: "hidden",
+  }}
+>
+  <img
+    src="/charger.jpg"
+    alt={item.label}
+    style={{
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      opacity: hovered ? 0.9 : 0.75,
+      transform: hovered ? "scale(1.05)" : "scale(1)",
+      transition: "all 0.35s ease",
+    }}
+  />
+</div>
+      
       <div style={{
         position: "absolute", inset: 0,
         background: hovered
