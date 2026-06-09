@@ -745,9 +745,9 @@ export default function WrapTech() {
       src={logo}
       alt="WrapTech Logo"
       style={{
-        width: "180px",
-        maxWidth: "80%",
-        marginBottom: "2rem",
+        width: "clamp(180px, 25vw, 400px)",
+       height: "auto",
+        marginBottom: "2rem"
       }}
     />
 
