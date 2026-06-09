@@ -367,7 +367,7 @@ export default function WrapTech() {
         }}
           onMouseEnter={e => { e.target.style.transform = "scale(1.04)"; e.target.style.boxShadow = "0 0 20px rgba(220,38,38,0.5)"; }}
           onMouseLeave={e => { e.target.style.transform = "scale(1)"; e.target.style.boxShadow = "none"; }}
-        >Book Now</button>
+        >Επικοινωνία</button>
       </nav>
 
       {/* ─────────── HERO ─────────── */}
@@ -427,7 +427,7 @@ export default function WrapTech() {
             animation: "fadeUp 0.8s ease 0.2s both",
           }}>
             <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#DC2626" }} />
-            Μεταμόρφωση αυτοκινήτου
+            Μεταμορφωση αυτοκινητου
           </div>
 
           <h1 style={{
@@ -491,7 +491,7 @@ export default function WrapTech() {
             }}
               onMouseEnter={e => { e.target.style.borderColor = "#DC2626"; e.target.style.color = "#DC2626"; }}
               onMouseLeave={e => { e.target.style.borderColor = "rgba(255,255,255,0.3)"; e.target.style.color = "#fff"; }}
-            >Request a Quote</button>
+            >Λάβετε Προσφορά</button>
           </div>
         </div>
 
