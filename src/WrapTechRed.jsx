@@ -327,6 +327,12 @@ export default function WrapTech() {
         borderBottom: navSolid ? "1px solid rgba(255,255,255,0.06)" : "none",
         transition: "all 0.4s ease",
       }}>
+
+        <div style={{ display: "flex", alignItems: "center" }}>
+  <span style={{ fontWeight: 800, fontSize: "0.95rem" }}>
+    <span style={{ color: "#DC2626" }}>W</span>rapTech
+  </span>
+</div>
         {/* <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
           <div style={{
             width: 32, height: 32, borderRadius: 8,
