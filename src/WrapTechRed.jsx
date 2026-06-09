@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import logo from "./assets/WrapTechLogo.jpg";
 const NAV_LINKS = ["Services", "Portfolio", "About", "Contact"];
-import chargerImage from "./assets/charger.jpg";
+import chargerImage from "./assets/red-car-wraps-31726338474095.jpg";
 
 const SERVICES = [
   {
