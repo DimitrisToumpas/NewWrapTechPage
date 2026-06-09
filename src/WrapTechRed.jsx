@@ -743,6 +743,7 @@ export default function WrapTech() {
   <ScrollReveal>
     <img
       src={logo}
+      className="logo-pro"
       alt="WrapTech Logo"
       style={{
         width: "clamp(250px, 35vw, 550px)",
