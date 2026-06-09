@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import logo from "./assets/WrapTechLogo.jpg";
 const NAV_LINKS = ["Services", "Portfolio", "About", "Contact"];
-import chargerImage from "./assets/red-car-wraps-31726338474095.jpg";
+import redCar from "./assets/red-car-wraps-31726338474095.jpg";
+import audi from "./assets/audi-4.png";
+
 
 const SERVICES = [
   {
@@ -64,14 +66,61 @@ const TESTIMONIALS = [
   },
 ];
 
+
 const PORTFOLIO_ITEMS = [
+  {
+    id: 1,
+    label: "Matte Black Supra",
+    tag: "Wrap",
+    tall: true,
+    image: audi,
+  },
+  {
+    id: 2,
+    label: "Satin PPF Porsche",
+    tag: "PPF",
+    tall: false,
+    image: redCar,
+  },
+  {
+    id: 3,
+    label: "Chrome Delete G-Wagon",
+    tag: "Wrap",
+    tall: false,
+    image: audi,
+  },
+  {
+    id: 4,
+    label: "Ceramic Coated R8",
+    tag: "Ceramic",
+    tall: true,
+    image: audi,
+  },
+  {
+    id: 5,
+    label: "Crimson Red GT-R",
+    tag: "Wrap",
+    tall: false,
+    image: audi,
+  },
+  {
+    id: 6,
+    label: "Full PPF McLaren 720S",
+    tag: "PPF",
+    tall: false,
+    image: audi,
+  },
+];
+
+
+{/*const PORTFOLIO_ITEMS = [
   { id: 1, label: "Matte Black Supra", tag: "Wrap", tall: true, hue: "20,20,20" },
   { id: 2, label: "Satin PPF Porsche", tag: "PPF", tall: false, hue: "30,30,30" },
   { id: 3, label: "Chrome Delete G-Wagon", tag: "Wrap", tall: false, hue: "15,15,15" },
   { id: 4, label: "Ceramic Coated R8", tag: "Ceramic", tall: true, hue: "25,25,25" },
   { id: 5, label: "Crimson Red GT-R", tag: "Wrap", tall: false, hue: "18,18,18" },
   { id: 6, label: "Full PPF McLaren 720S", tag: "PPF", tall: false, hue: "22,22,22" },
-];
+]; */}
 
 function useCountUp(target, duration = 2000, start = false) {
   const [count, setCount] = useState(0);
