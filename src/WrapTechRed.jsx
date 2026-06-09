@@ -749,7 +749,6 @@ export default function WrapTech() {
     alt="WrapTech Logo"
     className="logo-hero"
     style={{
-      width: "min(85vw, 600px)", /* Προσαρμογή για να μην παραμορφώνεται σε τεράστιες οθόνες */
       height: "auto",
       objectFit: "contain",
     }}
@@ -757,7 +756,7 @@ export default function WrapTech() {
 </section>
 
 
-<div style={{ height: "6rem", background: "#080808" }}></div>
+<div style={{ height: "26rem", background: "#080808" }}></div>
 
 
       {/* ─────────── LOCATION ─────────── */}
