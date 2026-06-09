@@ -735,8 +735,8 @@ export default function WrapTech() {
 {/* ─────────── LOGO ─────────── */}
 <section
   style={{
-    height: "100vh", /* Πιάνει όλο το ύψος της οθόνης */
-    width: "100vw",  /* Αναγκάζει το section να πιάσει όλο το πλάτος της οθόνης */
+    height: "100vh",
+    width: "100%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -747,19 +747,16 @@ export default function WrapTech() {
   <img
     src={logo}
     alt="WrapTech Logo"
+    className="logo-hero"
     style={{
+      width: "min(85vw, 700px)",
       height: "auto",
-      objectFit: "contain",
     }}
   />
 </section>
 
-
-<div style={{ height: "26rem", background: "#080808" }}></div>
-
-
       {/* ─────────── LOCATION ─────────── */}
-<section
+      <section
   style={{
     padding: "6rem 2rem",
     background: "#080808",
@@ -769,14 +766,15 @@ export default function WrapTech() {
   <ScrollReveal>
     <div
       style={{
-        maxWidth: "700px",
+        maxWidth: "900px",
         margin: "0 auto",
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+        gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
         gap: "2rem",
       }}
     >
-      <div
+
+            <div
         style={{
           padding: "2rem",
           background: "rgba(255,255,255,0.02)",
@@ -784,29 +782,18 @@ export default function WrapTech() {
           borderRadius: "16px",
         }}
       >
-        <h3
-          style={{
-            color: "#DC2626",
-            marginBottom: "1rem",
-            fontSize: "1.1rem",
-          }}
-        >
+        <h3 style={{ color: "#DC2626", marginBottom: "1rem" }}>
           📍 Διεύθυνση
         </h3>
 
-        <p
-          style={{
-            color: "#ccc",
-            lineHeight: 1.8,
-          }}
-        >
+        <p style={{ color: "#ccc", lineHeight: 1.8 }}>
           Τζων Κέννεντυ 12
           <br />
           Πυλαία 555 35
         </p>
       </div>
 
-      <div
+            <div
         style={{
           padding: "2rem",
           background: "rgba(255,255,255,0.02)",
@@ -814,22 +801,11 @@ export default function WrapTech() {
           borderRadius: "16px",
         }}
       >
-        <h3
-          style={{
-            color: "#DC2626",
-            marginBottom: "1rem",
-            fontSize: "1.1rem",
-          }}
-        >
+        <h3 style={{ color: "#DC2626", marginBottom: "1rem" }}>
           🕒 Ωράριο Λειτουργίας
         </h3>
 
-        <p
-          style={{
-            color: "#ccc",
-            lineHeight: 1.8,
-          }}
-        >
+        <p style={{ color: "#ccc", lineHeight: 1.8 }}>
           Δευτέρα – Παρασκευή
           <br />
           09:00 – 18:30
@@ -840,10 +816,12 @@ export default function WrapTech() {
           09:00 – 15:30
         </p>
       </div>
-    </div>
+
+          </div>
   </ScrollReveal>
 </section>
 
+      
 
       
 
@@ -928,7 +906,7 @@ export default function WrapTech() {
                 }}
                   onMouseEnter={e => { e.target.style.transform = "scale(1.05)"; e.target.style.boxShadow = "0 0 60px rgba(220,38,38,0.5)"; }}
                   onMouseLeave={e => { e.target.style.transform = "scale(1)"; e.target.style.boxShadow = "0 0 40px rgba(220,38,38,0.3)"; }}
-                >Book Consultation</button>
+                >Κλείσε ραντεβού</button>
               </a>
               <a href="tel:+30 2310 304 583" style={{ textDecoration: "none" }}>
                 <button style={{
@@ -954,7 +932,7 @@ export default function WrapTech() {
               display: "flex", gap: "2rem", justifyContent: "center", flexWrap: "wrap",
               color: "#555", fontSize: "0.8rem", letterSpacing: "0.08em",
             }}>
-              {["Free Consultation", "No Obligation", "Same-Day Response"].map((item) => (
+              {["Δωρεάν Συμβουλευτική", "Χωρίς Δέσμευση", "Απάντηση την ίδια μέρα"].map((item) => (
                 <span key={item} style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
                   <span style={{ color: "#DC2626" }}>✓</span> {item}
                 </span>
