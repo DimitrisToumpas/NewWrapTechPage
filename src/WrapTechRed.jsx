@@ -732,6 +732,29 @@ export default function WrapTech() {
         </div>
       </section>
 
+      {/* ─────────── LOGO ─────────── */}
+          <section
+  style={{
+    height: "100vh",
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    background: "#080808",
+    overflow: "hidden",
+  }}
+>
+  <img
+    src={logo}
+    alt="WrapTech Logo"
+    className="logo-hero"
+    style={{
+      width: "min(80vw, 800px)",
+      height: "auto",
+    }}
+  />
+</section>
+
       {/* ─────────── LOCATION ─────────── */}
 <section
   style={{
@@ -741,16 +764,6 @@ export default function WrapTech() {
   }}
 >
   <ScrollReveal>
-    <img
-      src={logo}
-      className="logo-pro"
-      alt="WrapTech Logo"
-      style={{
-        width: "clamp(250px, 35vw, 550px)",
-        height: "auto",
-      }}
-    />
-
     <div
       style={{
         maxWidth: "700px",
