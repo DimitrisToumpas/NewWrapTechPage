@@ -33,7 +33,7 @@ const SERVICES = [
 ];
 
 const STATS = [
-  { value: 1200, suffix: "+", label: "Οχήματα που Εξυπηρετήθηκαν" },
+  { value: 1200, suffix: "+", label: "Οχήματα που Εξυπηρετήθηκαν", overflow: "visible"},
   { value: 8, suffix: "+", label: "Χρόνια Εμπειρίας" },
   { value: 250, suffix: "+", label: "Τοποθετήσεις PPF" },
   { value: 4.9, suffix: "", label: "Αξιολόγηση Πελατών" },
