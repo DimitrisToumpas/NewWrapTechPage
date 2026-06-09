@@ -732,11 +732,11 @@ export default function WrapTech() {
         </div>
       </section>
 
-      {/* ─────────── LOGO ─────────── */}
-          <section
+{/* ─────────── LOGO ─────────── */}
+<section
   style={{
-    height: "100vh",
-    width: "100%",
+    height: "100vh", /* Πιάνει όλο το ύψος της οθόνης */
+    width: "100vw",  /* Αναγκάζει το section να πιάσει όλο το πλάτος της οθόνης */
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -749,11 +749,16 @@ export default function WrapTech() {
     alt="WrapTech Logo"
     className="logo-hero"
     style={{
-      width: "min(80vw, 800px)",
+      width: "min(85vw, 600px)", /* Προσαρμογή για να μην παραμορφώνεται σε τεράστιες οθόνες */
       height: "auto",
+      objectFit: "contain",
     }}
   />
 </section>
+
+
+<div style={{ height: "6rem", background: "#080808" }}></div>
+
 
       {/* ─────────── LOCATION ─────────── */}
 <section
