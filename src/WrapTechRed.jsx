@@ -10,58 +10,95 @@ const SOCIAL_LINKS = [
   { name: "TikTok", icon: "🎵", url: "https://www.tiktok.com/@wraptech_gr?lang=el-GR&is_from_webapp=1&sender_device=mobile&sender_web_id=7604732021122795030" },
 ];
 
-function SocialSidebar() {
+
+function ResponsiveSocials() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Έλεγχος για το αν ο χρήστης είναι από κινητό (< 768px)
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    handleResize(); // Έλεγχος κατά το αρχικό load
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+   LesserThan, }, []);
+
+  // 1. ΣΤΥΛ ΓΙΑ ΚΙΝΗΤΑ (Μπάρα στο κάτω μέρος)
+  const mobileContainerStyle = {
+    position: "fixed",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: "60px",
+    backgroundColor: "rgba(15, 15, 15, 0.95)",
+    backdropFilter: "blur(10px)",
+    borderTop: "1px solid rgba(220, 38, 38, 0.3)", // Κόκκινο διακριτικό border επάνω
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center",
+    zIndex: 1000,
+    boxShadow: "0 -4px 20px rgba(0, 0, 0, 0.6)",
+    padding: "0 10px",
+  };
+
+  // 2. ΣΤΥΛ ΓΙΑ ΥΠΟΛΟΓΙΣΤΕΣ (Μπάρα στα αριστερά)
+  const desktopContainerStyle = {
+    position: "fixed",
+    left: "15px",
+    top: "50%",
+    transform: "translateY(-50%)",
+    display: "flex",
+    flexDirection: "column",
+    gap: "12px",
+    zIndex: 1000,
+  };
+
   return (
-    <div
-      style={{
-        position: "fixed",
-        left: 0,
-        top: "50%",
-        transform: "translateY(-50%)",
-        zIndex: 100,
-        display: "flex",
-        flexDirection: "column",
-        gap: "0.5rem",
-        // Hides on mobile screens to preserve layout integrity
-        paddingLeft: "0.5rem",
-      }}
-      className="desktop-only-sidebar" // Put a media query in your CSS to hide on < 768px if needed
-    >
+    <div style={isMobile ? mobileContainerStyle : desktopContainerStyle}>
       {SOCIAL_LINKS.map((social) => {
         const [hovered, setHovered] = useState(false);
+
+        const itemStyle = {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textDecoration: "none",
+          color: "#fff",
+          transition: "all 0.3s ease",
+          // Διαφορετικό μέγεθος και σχήμα ανάλογα με τη συσκευή
+          width: isMobile ? "45px" : "48px",
+          height: isMobile ? "45px" : "48px",
+          borderRadius: isMobile ? "50%" : "8px", // Στρογγυλά στο κινητό, τετράγωνα με καμπύλες στο desktop
+          background: hovered ? "#DC2626" : "rgba(30, 30, 30, 0.7)",
+          border: `1px solid ${hovered ? "#DC2626" : "rgba(255, 255, 255, 0.1)"}`,
+          boxShadow: "0 4px 10px rgba(0,0,0,0.4)",
+          transform: !isMobile && hovered ? "translateX(5px)" : "none", // Μόνο στο desktop βγαίνει προς τα έξω
+        };
+
         return (
           <a
             key={social.name}
             href={social.url}
             target="_blank"
             rel="noopener noreferrer"
+            style={itemStyle}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "46px",
-              height: "46px",
-              background: hovered ? "#DC2626" : "rgba(20, 20, 20, 0.85)",
-              color: "#ffffff",
-              textDecoration: "none",
-              borderRadius: "8px",
-              fontSize: "1.3rem",
-              border: `1px solid ${hovered ? "#DC2626" : "rgba(255, 255, 255, 0.1)"}`,
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.5)",
-              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-              transform: hovered ? "translateX(4px)" : "none",
-            }}
             title={social.name}
           >
-            {social.icon}
+            <span style={{ fontSize: isMobile ? "1.4rem" : "1.2rem" }}>
+              {social.icon}
+            </span>
           </a>
         );
       })}
     </div>
   );
 }
+
+export default ResponsiveSocials;
 
 const SERVICES = [
   {
