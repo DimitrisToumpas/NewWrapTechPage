@@ -23,7 +23,8 @@ function ResponsiveSocials() {
     handleResize(); // Έλεγχος κατά το αρχικό load
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-   LesserThan, }, []);
+  }, []); // <--- Εδώ καθαρίστηκε η γραμμή
+
 
   // 1. ΣΤΥΛ ΓΙΑ ΚΙΝΗΤΑ (Μπάρα στο κάτω μέρος)
   const mobileContainerStyle = {
