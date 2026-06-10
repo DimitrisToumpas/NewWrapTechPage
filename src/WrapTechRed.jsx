@@ -4,7 +4,7 @@ const NAV_LINKS = ["Services", "Portfolio", "About", "Contact"];
 import redCar from "./assets/red-car-wraps-31726338474095.jpg";
 import audi from "./assets/audi-4.png";
 
-onst SOCIAL_LINKS = [
+const SOCIAL_LINKS = [
   { name: "Instagram", icon: "📸", url: "https://www.instagram.com/wraptech.gr?igsh=MTB6MHZpd2wxOGh4NQ==" },
   { name: "Facebook", icon: "👥", url: "https://www.facebook.com/Wraptech.gr" },
   { name: "TikTok", icon: "🎵", url: "https://www.tiktok.com/@wraptech_gr?lang=el-GR&is_from_webapp=1&sender_device=mobile&sender_web_id=7604732021122795030" },
