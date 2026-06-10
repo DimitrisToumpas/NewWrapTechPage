@@ -4,6 +4,64 @@ const NAV_LINKS = ["Services", "Portfolio", "About", "Contact"];
 import redCar from "./assets/red-car-wraps-31726338474095.jpg";
 import audi from "./assets/audi-4.png";
 
+onst SOCIAL_LINKS = [
+  { name: "Instagram", icon: "📸", url: "https://www.instagram.com/wraptech.gr?igsh=MTB6MHZpd2wxOGh4NQ==" },
+  { name: "Facebook", icon: "👥", url: "https://www.facebook.com/Wraptech.gr" },
+  { name: "TikTok", icon: "🎵", url: "https://www.tiktok.com/@wraptech_gr?lang=el-GR&is_from_webapp=1&sender_device=mobile&sender_web_id=7604732021122795030" },
+];
+
+function SocialSidebar() {
+  return (
+    <div
+      style={{
+        position: "fixed",
+        left: 0,
+        top: "50%",
+        transform: "translateY(-50%)",
+        zIndex: 100,
+        display: "flex",
+        flexDirection: "column",
+        gap: "0.5rem",
+        // Hides on mobile screens to preserve layout integrity
+        paddingLeft: "0.5rem",
+      }}
+      className="desktop-only-sidebar" // Put a media query in your CSS to hide on < 768px if needed
+    >
+      {SOCIAL_LINKS.map((social) => {
+        const [hovered, setHovered] = useState(false);
+        return (
+          <a
+            key={social.name}
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "46px",
+              height: "46px",
+              background: hovered ? "#DC2626" : "rgba(20, 20, 20, 0.85)",
+              color: "#ffffff",
+              textDecoration: "none",
+              borderRadius: "8px",
+              fontSize: "1.3rem",
+              border: `1px solid ${hovered ? "#DC2626" : "rgba(255, 255, 255, 0.1)"}`,
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.5)",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+              transform: hovered ? "translateX(4px)" : "none",
+            }}
+            title={social.name}
+          >
+            {social.icon}
+          </a>
+        );
+      })}
+    </div>
+  );
+}
 
 const SERVICES = [
   {
