@@ -41,40 +41,6 @@ const SOCIAL_LINKS = [
   },
   ];
 
-// Ξεχωριστό component για το κάθε εικονίδιο ώστε να δουλεύει σωστά το useState (hover)
-function SocialLink({ social, isMobile }) {
-  const [hovered, setHovered] = useState(false);
-
-  const itemStyle = {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    textDecoration: "none",
-    color: hovered ? "#000" : "#fff", // Γίνεται μαύρο το εικονίδιο όταν κοκκινίζει το background
-    transition: "all 0.3s ease",
-    width: isMobile ? "36px" : "44px",
-    height: isMobile ? "36px" : "44px",
-    borderRadius: "8px",
-    background: hovered ? "#DC2626" : "rgba(255, 255, 255, 0.03)",
-    border: `1px solid ${hovered ? "#DC2626" : "rgba(255, 255, 255, 0.08)"}`,
-    transform: !isMobile && hovered ? "translateX(5px)" : "none",
-    cursor: "pointer"
-  };
-
-  return (
-    <a
-      href={social.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={itemStyle}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      title={social.name}
-    >
-      {social.svg}
-    </a>
-  );
-}
 
 function ResponsiveSocials({ isMobile }) {
   // Στυλ για τη σειρά των social στο κινητό (πάνω δεξιά)
@@ -99,9 +65,50 @@ function ResponsiveSocials({ isMobile }) {
 
   return (
     <div style={isMobile ? mobileStyle : desktopStyle}>
-      {SOCIAL_LINKS.map((social) => (
-        <SocialLink key={social.name} social={social} isMobile={isMobile} />
-      ))}
+      {/* Εμβόλιμο CSS στυλ για να μην κολλάνε ποτέ τα hovers */}
+      <style>{`
+        .social-icon-link {
+          background: rgba(255, 255, 255, 0.03) !important;
+          border: 1px solid rgba(255, 255, 255, 0.08) !important;
+          color: #fff !important;
+        }
+        .social-icon-link:hover {
+          background: #DC2626 !important;
+          border-color: #DC2626 !important;
+          color: #000 !important;
+        }
+        .desktop-sidebar-link:hover {
+          transform: translateX(5px) !important;
+        }
+      `}</style>
+
+      {SOCIAL_LINKS.map((social) => {
+        const itemStyle = {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textDecoration: "none",
+          transition: "all 0.3s ease",
+          width: isMobile ? "36px" : "44px",
+          height: isMobile ? "36px" : "44px",
+          borderRadius: "8px",
+          cursor: "pointer"
+        };
+
+        return (
+          <a
+            key={social.name}
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={itemStyle}
+            className={`social-icon-link ${!isMobile ? 'desktop-sidebar-link' : ''}`}
+            title={social.name}
+          >
+            {social.svg}
+          </a>
+        );
+      })}
     </div>
   );
 }
