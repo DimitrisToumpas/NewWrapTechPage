@@ -11,41 +11,17 @@ const SOCIAL_LINKS = [
 ];
 
 
-function ResponsiveSocials() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Έλεγχος για το αν ο χρήστης είναι από κινητό (< 768px)
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    handleResize(); // Έλεγχος κατά το αρχικό load
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []); // <--- Εδώ καθαρίστηκε η γραμμή
-
-
-  // 1. ΣΤΥΛ ΓΙΑ ΚΙΝΗΤΑ (Μπάρα στο κάτω μέρος)
-  const mobileContainerStyle = {
-    position: "fixed",
-    bottom: 0,
-    left: 0,
-    right: 0,
-    height: "60px",
-    backgroundColor: "rgba(15, 15, 15, 0.95)",
-    backdropFilter: "blur(10px)",
-    borderTop: "1px solid rgba(220, 38, 38, 0.3)", // Κόκκινο διακριτικό border επάνω
+function ResponsiveSocials({ isMobile }) {
+  // Στυλ για τη σειρά των social στο κινητό (πάνω δεξιά)
+  const mobileStyle = {
     display: "flex",
-    justifyContent: "space-around",
+    gap: "10px",
     alignItems: "center",
-    zIndex: 1000,
-    boxShadow: "0 -4px 20px rgba(0, 0, 0, 0.6)",
-    padding: "0 10px",
+    marginRight: "10px"
   };
 
-  // 2. ΣΤΥΛ ΓΙΑ ΥΠΟΛΟΓΙΣΤΕΣ (Μπάρα στα αριστερά)
-  const desktopContainerStyle = {
+  // Στυλ για τη σταθερή μπάρα αριστερά στο desktop
+  const desktopStyle = {
     position: "fixed",
     left: "15px",
     top: "50%",
@@ -57,7 +33,7 @@ function ResponsiveSocials() {
   };
 
   return (
-    <div style={isMobile ? mobileContainerStyle : desktopContainerStyle}>
+    <div style={isMobile ? mobileStyle : desktopStyle}>
       {SOCIAL_LINKS.map((social) => {
         const [hovered, setHovered] = useState(false);
 
@@ -68,14 +44,12 @@ function ResponsiveSocials() {
           textDecoration: "none",
           color: "#fff",
           transition: "all 0.3s ease",
-          // Διαφορετικό μέγεθος και σχήμα ανάλογα με τη συσκευή
-          width: isMobile ? "45px" : "48px",
-          height: isMobile ? "45px" : "48px",
-          borderRadius: isMobile ? "50%" : "8px", // Στρογγυλά στο κινητό, τετράγωνα με καμπύλες στο desktop
-          background: hovered ? "#DC2626" : "rgba(30, 30, 30, 0.7)",
+          width: isMobile ? "36px" : "48px", // Λίγο πιο μικρά στο κινητό για να χωράνε στο nav
+          height: isMobile ? "36px" : "48px",
+          borderRadius: "8px",
+          background: hovered ? "#DC2626" : "rgba(30, 30, 30, 0.6)",
           border: `1px solid ${hovered ? "#DC2626" : "rgba(255, 255, 255, 0.1)"}`,
-          boxShadow: "0 4px 10px rgba(0,0,0,0.4)",
-          transform: !isMobile && hovered ? "translateX(5px)" : "none", // Μόνο στο desktop βγαίνει προς τα έξω
+          transform: !isMobile && hovered ? "translateX(5px)" : "none",
         };
 
         return (
@@ -89,13 +63,15 @@ function ResponsiveSocials() {
             onMouseLeave={() => setHovered(false)}
             title={social.name}
           >
-            <span style={{ fontSize: isMobile ? "1.4rem" : "1.2rem" }}>
+            <span style={{ fontSize: isMobile ? "1.1rem" : "1.2rem" }}>
               {social.icon}
             </span>
           </a>
         );
       })}
     </div>
+  );
+}
   );
 }
 
@@ -516,8 +492,73 @@ export default function WrapTech() {
       overflowX: "hidden",
       minHeight: "100vh",
     }}>
-        <ResponsiveSocials />
+      const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+        return (
+    <div style={{
+      background: "#080808",
+      color: "#fff",
+      fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+      overflowX: "hidden",
+      minHeight: "100vh",
+    }}>
+      
+      {/* Αν ΕΙΝΑΙ desktop, δείξε την κλασική μπάρα αριστερά */}
+      {!isMobile && <ResponsiveSocials isMobile={false} />}
+
       {/* ─────────── NAV ─────────── */}
+      <nav style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
+        padding: isMobile ? "0.75rem 1rem" : "1.25rem 2rem", // Λίγο πιο μαζεμένο padding στο κινητό
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+        background: navSolid || isMobile ? "rgba(8,8,8,0.95)" : "transparent",
+        backdropFilter: navSolid || isMobile ? "blur(20px)" : "none",
+        borderBottom: navSolid || isMobile ? "1px solid rgba(255,255,255,0.06)" : "none",
+        transition: "all 0.4s ease",
+      }}>
+
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <span style={{ fontWeight: 800, fontSize: "0.95rem" }}>
+            <span style={{ color: "#DC2626" }}>W</span>rapTech
+          </span>
+        </div>
+
+        {/* Δεξιά πλευρά του Nav: Social + Κουμπί Επικοινωνίας */}
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          
+          {/* Αν ΕΙΝΑΙ κινητό, εμφάνισε τα social εδώ, ακριβώς αριστερά από την Επικοινωνία */}
+          {isMobile && <ResponsiveSocials isMobile={true} />}
+
+          <button onClick={() => scrollTo("contact")} style={{
+            background: "#DC2626",
+            color: "#000",
+            border: "none",
+            padding: isMobile ? "0.5rem 1rem" : "0.6rem 1.4rem", // Πιο μαζεμένο κουμπί στα κινητά
+            borderRadius: 40,
+            fontWeight: 700,
+            fontSize: isMobile ? "0.75rem" : "0.85rem",
+            cursor: "pointer",
+            letterSpacing: "0.02em",
+            whiteSpace: "nowrap", // Για να μην σπάει η λέξη στα δύο στο κινητό
+            transition: "transform 0.2s, box-shadow 0.2s",
+          }}
+            onMouseEnter={e => { e.target.style.transform = "scale(1.04)"; e.target.style.boxShadow = "0 0 20px rgba(220,38,38,0.5)"; }}
+            onMouseLeave={e => { e.target.style.transform = "scale(1)"; e.target.style.boxShadow = "none"; }}
+          >
+            Επικοινωνία
+          </button>
+        </div>
+      </nav>
+      
+
+      
+      {/* ───────────Old NAV ─────────── 
       <nav style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
         padding: "1.25rem 2rem",
@@ -541,9 +582,9 @@ export default function WrapTech() {
             fontSize: 14, fontWeight: 900, color: "#000",
           }}>W</div>
           <span style={{ fontWeight: 800, fontSize: "1.1rem", letterSpacing: "-0.02em" }}>WrapTech</span>
-        </div>*/}
+        </div>
 
-        {/* Desktop Links */}
+        
         <div style={{ display: "flex", gap: "2.5rem" }} className="desktop-nav">
           {NAV_LINKS.map((l) => (
             <button key={l} onClick={() => scrollTo(l.toLowerCase())}
@@ -575,7 +616,8 @@ export default function WrapTech() {
           onMouseLeave={e => { e.target.style.transform = "scale(1)"; e.target.style.boxShadow = "none"; }}
         >Επικοινωνία</button>
       </nav>
-
+*/}
+      
       {/* ─────────── HERO ─────────── */}
       <section id="hero" style={{
         minHeight: "100vh",
