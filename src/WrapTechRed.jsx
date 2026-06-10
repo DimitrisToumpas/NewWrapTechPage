@@ -41,9 +41,7 @@ const SOCIAL_LINKS = [
   },
   ];
 
-
 function ResponsiveSocials({ isMobile }) {
-  // Στυλ για τη σειρά των social στο κινητό (πάνω δεξιά)
   const mobileStyle = {
     display: "flex",
     gap: "8px",
@@ -51,7 +49,6 @@ function ResponsiveSocials({ isMobile }) {
     marginRight: "4px"
   };
 
-  // Στυλ για τη σταθερή μπάρα αριστερά στο desktop
   const desktopStyle = {
     position: "fixed",
     left: "15px",
@@ -65,20 +62,24 @@ function ResponsiveSocials({ isMobile }) {
 
   return (
     <div style={isMobile ? mobileStyle : desktopStyle}>
-      {/* Εμβόλιμο CSS στυλ για να μην κολλάνε ποτέ τα hovers */}
+      
+      {/* ⚠️ Η ΔΙΟΡΘΩΣΗ: Το hover λειτουργεί ΜΟΝΟ αν η συσκευή υποστηρίζει hover (ποντίκι) */}
       <style>{`
         .social-icon-link {
           background: rgba(255, 255, 255, 0.03) !important;
           border: 1px solid rgba(255, 255, 255, 0.08) !important;
           color: #fff !important;
         }
-        .social-icon-link:hover {
-          background: #DC2626 !important;
-          border-color: #DC2626 !important;
-          color: #000 !important;
-        }
-        .desktop-sidebar-link:hover {
-          transform: translateX(5px) !important;
+        
+        @media (hover: hover) {
+          .social-icon-link:hover {
+            background: #DC2626 !important;
+            border-color: #DC2626 !important;
+            color: #000 !important;
+          }
+          .desktop-sidebar-link:hover {
+            transform: translateX(5px) !important;
+          }
         }
       `}</style>
 
@@ -112,7 +113,6 @@ function ResponsiveSocials({ isMobile }) {
     </div>
   );
 }
-
 
 
 const SERVICES = [
