@@ -484,14 +484,6 @@ export default function WrapTech() {
     setMenuOpen(false);
   };
 
-  return (
-    <div style={{
-      background: "#080808",
-      color: "#fff",
-      fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-      overflowX: "hidden",
-      minHeight: "100vh",
-    }}>
       const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
