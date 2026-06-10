@@ -11,6 +11,42 @@ const SOCIAL_LINKS = [
 ];
 
 
+// Ξεχωριστό component για το κάθε εικονίδιο ώστε να δουλεύει σωστά το useState (hover)
+function SocialLink({ social, isMobile }) {
+  const [hovered, setHovered] = useState(false);
+
+  const itemStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textDecoration: "none",
+    color: "#fff",
+    transition: "all 0.3s ease",
+    width: isMobile ? "36px" : "48px",
+    height: isMobile ? "36px" : "48px",
+    borderRadius: "8px",
+    background: hovered ? "#DC2626" : "rgba(30, 30, 30, 0.6)",
+    border: `1px solid ${hovered ? "#DC2626" : "rgba(255, 255, 255, 0.1)"}`,
+    transform: !isMobile && hovered ? "translateX(5px)" : "none",
+  };
+
+  return (
+    <a
+      href={social.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={itemStyle}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      title={social.name}
+    >
+      <span style={{ fontSize: isMobile ? "1.1rem" : "1.2rem" }}>
+        {social.icon}
+      </span>
+    </a>
+  );
+}
+
 function ResponsiveSocials({ isMobile }) {
   // Στυλ για τη σειρά των social στο κινητό (πάνω δεξιά)
   const mobileStyle = {
@@ -34,46 +70,13 @@ function ResponsiveSocials({ isMobile }) {
 
   return (
     <div style={isMobile ? mobileStyle : desktopStyle}>
-      {SOCIAL_LINKS.map((social) => {
-        const [hovered, setHovered] = useState(false);
-
-        const itemStyle = {
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          textDecoration: "none",
-          color: "#fff",
-          transition: "all 0.3s ease",
-          width: isMobile ? "36px" : "48px", // Λίγο πιο μικρά στο κινητό για να χωράνε στο nav
-          height: isMobile ? "36px" : "48px",
-          borderRadius: "8px",
-          background: hovered ? "#DC2626" : "rgba(30, 30, 30, 0.6)",
-          border: `1px solid ${hovered ? "#DC2626" : "rgba(255, 255, 255, 0.1)"}`,
-          transform: !isMobile && hovered ? "translateX(5px)" : "none",
-        };
-
-        return (
-          <a
-            key={social.name}
-            href={social.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={itemStyle}
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            title={social.name}
-          >
-            <span style={{ fontSize: isMobile ? "1.1rem" : "1.2rem" }}>
-              {social.icon}
-            </span>
-          </a>
-        );
-      })}
+      {SOCIAL_LINKS.map((social) => (
+        <SocialLink key={social.name} social={social} isMobile={isMobile} />
+      ))}
     </div>
   );
 }
-  );
-}
+
 
 
 const SERVICES = [
