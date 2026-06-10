@@ -99,7 +99,6 @@ function ResponsiveSocials() {
   );
 }
 
-export default ResponsiveSocials;
 
 const SERVICES = [
   {
