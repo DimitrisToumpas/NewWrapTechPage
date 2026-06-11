@@ -568,7 +568,7 @@ export default function WrapTech() {
 
           <button onClick={() => scrollTo("contact")} style={{
             background: "#DC2626",
-            color: "#000",
+            color: "#FFFFFF",
             border: "none",
             padding: isMobile ? "0.5rem 1rem" : "0.6rem 1.4rem", // Πιο μαζεμένο κουμπί στα κινητά
             borderRadius: 40,
