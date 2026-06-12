@@ -6,12 +6,6 @@ const NAV_LINKS = ["Services", "Portfolio", "About", "Contact"];
 import redCar from "./assets/red-car-wraps-31726338474095.jpg";
 import audi from "./assets/audi-4.png";
 
-{ /* const SOCIAL_LINKS = [
-  { name: "Instagram", icon: "📸", url: "https://www.instagram.com/wraptech.gr?igsh=MTB6MHZpd2wxOGh4NQ==" },
-  { name: "Facebook", icon: "👥", url: "https://www.facebook.com/Wraptech.gr" },
-  { name: "TikTok", icon: "🎵", url: "https://www.tiktok.com/@wraptech_gr?lang=el-GR&is_from_webapp=1&sender_device=mobile&sender_web_id=7604732021122795030" },
-]; */}
-
 // Τα επίσημα λογότυπα σε μορφή SVG path
 const SOCIAL_LINKS = [
   {
@@ -155,8 +149,8 @@ const SERVICES = [
   {
     icon: "🏙️",
     title: "Εφαρμογές Κτηρίων",
-    desc: "Professional-grade nano-ceramic coating delivering hydrophobic protection, mirror-like gloss, and years of effortless maintenance.",
-    tag: "Pro",
+    desc: "Εξειδικευμένες λύσεις μεμβρανών που συνδυάζουν κομψότητα και προστασία. Οι μεμβράνες ασφαλείας ενισχύουν τα τζάμια ενάντια σε χτυπήματα. Ενώ οι διακοσμητικές μεμβράνες ανανεώνουν ριζικά έπιπλα και συσκευές. Μια ολοκληρωμένη αναβάθμιση για κάθε χώρο.",
+    tag: "Spaces",
   },
   {
     icon: "✨",
