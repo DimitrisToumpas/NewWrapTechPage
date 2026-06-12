@@ -5,7 +5,7 @@ import carWrap from "./assets/CarWrap.svg" ;
 const NAV_LINKS = ["Services", "Portfolio", "About", "Contact"];
 import redCar from "./assets/red-car-wraps-31726338474095.jpg";
 import audi from "./assets/audi-4.png";
-import interior from "./assets/apartment.svg";
+import interior from "./assets/picsvg_download.svg";
 
 // Τα επίσημα λογότυπα σε μορφή SVG path
 const SOCIAL_LINKS = [
