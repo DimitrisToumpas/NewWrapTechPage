@@ -197,8 +197,8 @@ const PORTFOLIO_ITEMS = [
     id: 1,
     label: "Matte Black Supra",
     tag: "Wrap",
-    tall: true,
-    image: wrapMotorbike,
+    tall: false,
+    image: redCar,
   },
   {
     id: 2,
@@ -219,7 +219,7 @@ const PORTFOLIO_ITEMS = [
     label: "Ceramic Coated R8",
     tag: "Ceramic",
     tall: true,
-    image: audi,
+    image: wrapMotorbike,
   },
   {
     id: 5,
