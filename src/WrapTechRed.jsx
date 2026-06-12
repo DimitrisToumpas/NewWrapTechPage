@@ -63,36 +63,40 @@ function ResponsiveSocials({ isMobile }) {
   return (
     <div style={isMobile ? mobileStyle : desktopStyle}>
       
-  <style>{`
-  .social-icon-link {
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    color: #fff !important;
-    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-  }
-  
-  /* Mobile Touch Feedback (Όταν το πατάνε στο κινητό) */
-  .social-icon-link:active {
-    color: #DC2626 !important; /* Χρησιμοποιώ το ίδιο κόκκινο που έχεις παρακάτω */
-    transform: scale(0.95); /* Μικραίνει ελάχιστα αντί να μεγαλώνει, δίνει καλύτερη αίσθηση "κουμπιού" στο χέρι */
-  }
+<style>{`      
+.social-icon-link {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
+  /* Αυξάνουμε ελαφρώς το χρόνο και προσθέτουμε το transform στο transition */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
 
-  /* Desktop Hover & Active Effects */
-  @media (hover: hover) {
-    .social-icon-link:hover {
-      background: #DC2626 !important;
-      border-color: #DC2626 !important;
-      color: #000 !important;
-    }
-    .social-icon-link:active {
-      background: #B91C1C !important; /* Πιο σκούρο κόκκινο για το click στο desktop */
-      color: #000 !important;
-      transform: scale(0.95);
-    }
-    .desktop-sidebar-link:hover {
-      transform: translateX(5px) !important;
-    }
+/* Mobile Touch Feedback */
+.social-icon-link:active {
+  background: #DC2626 !important; /* Προσθήκη background για να φανεί το πάτημα */
+  color: #fff !important;
+  border-color: #DC2626 !important;
+  transform: scale(0.90) !important; /* Πιο έντονο μίκρεμα για να γίνει αισθητό στο χέρι */
+}
+
+/* Desktop Hover & Active Effects */
+@media (hover: hover) {
+  .social-icon-link:hover {
+    background: #DC2626 !important;
+    border-color: #DC2626 !important;
+    color: #000 !important;
   }
+  .social-icon-link:active {
+    background: #B91C1C !important;
+    border-color: #B91C1C !important;
+    color: #000 !important;
+    transform: scale(0.92) !important; /* Έντονο feedback και στο desktop */
+  }
+  .desktop-sidebar-link:hover {
+    transform: translateX(5px) !important;
+  }
+}
 `}</style>
 
 
@@ -599,68 +603,6 @@ export default function WrapTech() {
           </button>
         </div>
       </nav>
-      
-
-      
-      {/* ───────────Old NAV ─────────── 
-      <nav style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
-        padding: "1.25rem 2rem",
-        display: "flex", alignItems: "center", justifyContent: "space-between",
-        background: navSolid ? "rgba(8,8,8,0.95)" : "transparent",
-        backdropFilter: navSolid ? "blur(20px)" : "none",
-        borderBottom: navSolid ? "1px solid rgba(255,255,255,0.06)" : "none",
-        transition: "all 0.4s ease",
-      }}>
-
-        <div style={{ display: "flex", alignItems: "center" }}>
-  <span style={{ fontWeight: 800, fontSize: "0.95rem" }}>
-    <span style={{ color: "#DC2626" }}>W</span>rapTech
-  </span>
-</div>
-        {/* <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-          <div style={{
-            width: 32, height: 32, borderRadius: 8,
-            background: "linear-gradient(135deg, #DC2626, #EF4444)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: 14, fontWeight: 900, color: "#000",
-          }}>W</div>
-          <span style={{ fontWeight: 800, fontSize: "1.1rem", letterSpacing: "-0.02em" }}>WrapTech</span>
-        </div>
-
-        
-        <div style={{ display: "flex", gap: "2.5rem" }} className="desktop-nav">
-          {NAV_LINKS.map((l) => (
-            <button key={l} onClick={() => scrollTo(l.toLowerCase())}
-              style={{
-                background: "none", border: "none", cursor: "pointer",
-                color: "#aaa", fontSize: "0.875rem", letterSpacing: "0.05em",
-                transition: "color 0.2s",
-                padding: 0,
-              }}
-              onMouseEnter={e => e.target.style.color = "#fff"}
-              onMouseLeave={e => e.target.style.color = "#aaa"}
-            >{l}</button>
-          ))}
-        </div>
-
-        <button onClick={() => scrollTo("contact")} style={{
-          background: "#DC2626",
-          color: "#000",
-          border: "none",
-          padding: "0.6rem 1.4rem",
-          borderRadius: 40,
-          fontWeight: 700,
-          fontSize: "0.85rem",
-          cursor: "pointer",
-          letterSpacing: "0.02em",
-          transition: "transform 0.2s, box-shadow 0.2s",
-        }}
-          onMouseEnter={e => { e.target.style.transform = "scale(1.04)"; e.target.style.boxShadow = "0 0 20px rgba(220,38,38,0.5)"; }}
-          onMouseLeave={e => { e.target.style.transform = "scale(1)"; e.target.style.boxShadow = "none"; }}
-        >Επικοινωνία</button>
-      </nav>
-*/}
       
       {/* ─────────── HERO ─────────── */}
       <section id="hero" style={{
