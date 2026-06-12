@@ -1310,8 +1310,6 @@ function ServiceCard({ service }) {
 
   // Έλεγχος αν το icon είναι emoji (μικρό string) ή URL από το import του SVG
   const isEmoji = typeof service.icon === 'string' && service.icon.length < 5;
-  
-  const navigate = useNavigate();
 
   const handleDoubleClick = () => {
     //navigate('/detailsInfo');
