@@ -1281,76 +1281,7 @@ export default function WrapTech() {
 </div> 
   );
 }
-  
-function ServiceCard({ service }) {
-  const [hovered, setHovered] = useState(false);
-  // Αν το string έχει μήκος μικρότερο από 5 χαρακτήρες, είναι σίγουρα emoji!
-  const isEmoji = typeof service.icon === 'string' && service.icon.length < 5;
 
-  return (
-    <div style={{
-      background: "rgba(16, 12, 12, 0.6)",
-      border: "1px solid rgba(205, 56, 55, 0.15)", // Premium red #CD3837 με opacity
-      padding: "2.5rem",
-      borderRadius: "12px",
-    }}>
-      <div style={{ 
-        fontSize: "2rem", 
-        marginBottom: "1.5rem", 
-        display: "flex", 
-        alignItems: "center",
-        minHeight: "40px" // Κρατάει σταθερό ύψος για να μην κουνιέται το κείμενο
-      }}>
-        {isEmoji ? (
-          /* Εδώ γίνεται render το Emoji */
-          service.icon
-        ) : (
-          /* Εδώ γίνεται render το SVG ως απλή εικόνα μέσω του URL του */
-          <img 
-            src={service.icon} 
-            alt={service.title} 
-            style={{ width: "40px", height: "40px", objectFit: "contain" }} 
-          />
-        )}
-      </div>
-      <h3 style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: "1rem" }}>
-        {service.title}
-      </h3>
-      <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.9rem", lineHeight: 1.6 }}>
-        {service.desc}
-      </p>
-    </div>
-  );
-};
-  return (
-    <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        padding: "2rem",
-        borderRadius: 16,
-        background: hovered
-          ? "rgba(220,38,38,0.06)"
-          : "rgba(255,255,255,0.02)",
-        border: `1px solid ${hovered ? "rgba(220,38,38,0.3)" : "rgba(255,255,255,0.06)"}`,
-        backdropFilter: "blur(10px)",
-        transition: "all 0.35s ease",
-        cursor: "default",
-        transform: hovered ? "translateY(-4px)" : "none",
-        height: "100%",
-      }}
-    >
-      <div style={{
-        fontSize: "2rem",
-        marginBottom: "1.25rem",
-        display: "flex", alignItems: "center", justifyContent: "space-between",
-      }}>
-        <span>{service.icon}</span>
-        <span style={{
-          background: "rgba(220,38,38,0.12)",
-          color: "#DC2626",
-          fontSize: "0.65rem",
-          letterSpacing: "0.1em",
 function ServiceCard({ service }) {
   const [hovered, setHovered] = useState(false);
 
