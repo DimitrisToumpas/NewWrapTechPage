@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import logo from "./assets/WrapTechThumbnail.jpg";
-import sunProtectIcon from "./assets/SunProtectionWrap.svg" ;
+import carInterior from "./assets/clean-car.svg" ;
 import carWrap from "./assets/CarWrap.svg" ;
 const NAV_LINKS = ["Services", "Portfolio", "About", "Contact"];
 import redCar from "./assets/red-car-wraps-31726338474095.jpg";
 import audi from "./assets/audi-4.png";
-import interior from "./assets/Interior.svg";
+import interior from "./assets/apartment.svg";
 
 // Τα επίσημα λογότυπα σε μορφή SVG path
 const SOCIAL_LINKS = [
@@ -142,7 +142,7 @@ const SERVICES = [
     tag: "Popular",
   },
  {
-    icon: "✨",
+    icon: carInterior,
     title: "Best Car Wrapping Services",
     desc: "Περιποίηση & Ηλεκτροστατική βαφή ζαντών.",
     tag: "Detail",
