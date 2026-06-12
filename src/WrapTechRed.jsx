@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import logo from "./assets/WrapTechThumbnail.jpg";
-import carInterior from "./assets/clean-car.svg" ;
+import carInterior from "./assets/carIn.svg" ;
 import carWrap from "./assets/CarWrap.svg" ;
 const NAV_LINKS = ["Services", "Portfolio", "About", "Contact"];
 import redCar from "./assets/red-car-wraps-31726338474095.jpg";
