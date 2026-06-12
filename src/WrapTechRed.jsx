@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import logo from "./assets/WrapTechThumbnail.jpg";
+import sunProtectIcon from "./assets/SunProtectionWrap.svg"
 const NAV_LINKS = ["Services", "Portfolio", "About", "Contact"];
 import redCar from "./assets/red-car-wraps-31726338474095.jpg";
 import audi from "./assets/audi-4.png";
@@ -134,6 +135,45 @@ function ResponsiveSocials({ isMobile }) {
   );
 }
 
+const ServiceCard = ({ service }) => {
+  // Αν το string έχει μήκος μικρότερο από 5 χαρακτήρες, είναι σίγουρα emoji!
+  const isEmoji = typeof service.icon === 'string' && service.icon.length < 5;
+
+  return (
+    <div style={{
+      background: "rgba(16, 12, 12, 0.6)",
+      border: "1px solid rgba(205, 56, 55, 0.15)", // Premium red #CD3837 με opacity
+      padding: "2.5rem",
+      borderRadius: "12px",
+    }}>
+      <div style={{ 
+        fontSize: "2rem", 
+        marginBottom: "1.5rem", 
+        display: "flex", 
+        alignItems: "center",
+        minHeight: "40px" // Κρατάει σταθερό ύψος για να μην κουνιέται το κείμενο
+      }}>
+        {isEmoji ? (
+          /* Εδώ γίνεται render το Emoji */
+          service.icon
+        ) : (
+          /* Εδώ γίνεται render το SVG ως απλή εικόνα μέσω του URL του */
+          <img 
+            src={service.icon} 
+            alt={service.title} 
+            style={{ width: "40px", height: "40px", objectFit: "contain" }} 
+          />
+        )}
+      </div>
+      <h3 style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: "1rem" }}>
+        {service.title}
+      </h3>
+      <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.9rem", lineHeight: 1.6 }}>
+        {service.desc}
+      </p>
+    </div>
+  );
+};
 
 
 const SERVICES = [
@@ -144,7 +184,7 @@ const SERVICES = [
     tag: "Popular",
   },
   {
-    icon: "🛡️",
+    icon: sunProtectIcon,
     title: "Αντιηλιακές Μεμβράνες",
     desc: "Οι μεμβράνες φαναριών υφίστανται είτε για να προστατεύσουν τα φανάρια του οχήματός σας είτε για να το διακοσμήσουν αλλάζοντας το χρώμα ακόμα και το σχέδιό τους.",
     tag: "PPF",
@@ -162,6 +202,7 @@ const SERVICES = [
     tag: "Detail",
   },
 ];
+
 
 const STATS = [
   { value: 1200, suffix: "+", label: "Οχηματα που Εξυπηρετηθηκαν"},
