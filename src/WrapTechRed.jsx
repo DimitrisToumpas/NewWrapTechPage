@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import logo from "./assets/WrapTechThumbnail.jpg";
-import sunProtectIcon from "./assets/SunProtectionWrap.svg"
+import sunProtectIcon from "./assets/SunProtectionWrap.svg" ;
+import carWrap from "./assets/CarWrap.svg" ;
 const NAV_LINKS = ["Services", "Portfolio", "About", "Contact"];
 import redCar from "./assets/red-car-wraps-31726338474095.jpg";
 import audi from "./assets/audi-4.png";
@@ -140,7 +141,7 @@ function ResponsiveSocials({ isMobile }) {
 
 const SERVICES = [
   {
-    icon: "🎨",
+    icon: carWrap,
     title: "Μεμβράνες Αλλαγής Χρώματος",
     desc: "Ολική – Μερική κάλυψη οχημάτων, Εσωτερικών επενδύσεων οχημάτων, Διαφημιστική κάλυψη οχημάτων",
     tag: "Popular",
