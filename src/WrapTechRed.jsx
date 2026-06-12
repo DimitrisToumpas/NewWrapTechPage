@@ -63,25 +63,38 @@ function ResponsiveSocials({ isMobile }) {
   return (
     <div style={isMobile ? mobileStyle : desktopStyle}>
       
-      {/* ⚠️ Η ΔΙΟΡΘΩΣΗ: Το hover λειτουργεί ΜΟΝΟ αν η συσκευή υποστηρίζει hover (ποντίκι) */}
-      <style>{`
-        .social-icon-link {
-          background: rgba(255, 255, 255, 0.03) !important;
-          border: 1px solid rgba(255, 255, 255, 0.08) !important;
-          color: #fff !important;
-        }
-        
-        @media (hover: hover) {
-          .social-icon-link:hover {
-            background: #DC2626 !important;
-            border-color: #DC2626 !important;
-            color: #000 !important;
-          }
-          .desktop-sidebar-link:hover {
-            transform: translateX(5px) !important;
-          }
-        }
-      `}</style>
+  <style>{`
+  .social-icon-link {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  /* Mobile Touch Feedback (Όταν το πατάνε στο κινητό) */
+  .social-icon-link:active {
+    color: #DC2626 !important; /* Χρησιμοποιώ το ίδιο κόκκινο που έχεις παρακάτω */
+    transform: scale(0.95); /* Μικραίνει ελάχιστα αντί να μεγαλώνει, δίνει καλύτερη αίσθηση "κουμπιού" στο χέρι */
+  }
+
+  /* Desktop Hover & Active Effects */
+  @media (hover: hover) {
+    .social-icon-link:hover {
+      background: #DC2626 !important;
+      border-color: #DC2626 !important;
+      color: #000 !important;
+    }
+    .social-icon-link:active {
+      background: #B91C1C !important; /* Πιο σκούρο κόκκινο για το click στο desktop */
+      color: #000 !important;
+      transform: scale(0.95);
+    }
+    .desktop-sidebar-link:hover {
+      transform: translateX(5px) !important;
+    }
+  }
+`}</style>
+
 
       {SOCIAL_LINKS.map((social) => {
         const itemStyle = {
@@ -143,35 +156,35 @@ const SERVICES = [
 ];
 
 const STATS = [
-  { value: 1200, suffix: "+", label: "Οχήματα που Εξυπηρετήθηκαν"},
-  { value: 8, suffix: "+", label: "Χρόνια Εμπειρίας" },
-  { value: 250, suffix: "+", label: "Τοποθετήσεις PPF" },
-  { value: 4.9, suffix: "", label: "Αξιολόγηση Πελατών" },
+  { value: 1200, suffix: "+", label: "Οχηματα που Εξυπηρετηθηκαν"},
+  { value: 6, suffix: "+", label: "Χρονια Εμπειριας" },
+  { value: 250, suffix: "+", label: "Τοποθετησεις PPF" },
+  { value: 4.9, suffix: "", label: "Αξιολογηση Πελατων" },
 ];
 
 const TESTIMONIALS = [
   {
-    name: "Νικόλαος Παπαδόπουλος",
-    role: "Citroën C4 Owner",
-    initials: "ΝΠ",
+    name: "Konstantinos Konstantinou",
+    role: "BMW X2 U10",
+    initials: "KK",
     rating: 5,
-    text: "WrapTech transformed my C4 with a deep crimson wrap. The attention to detail is unmatched — every panel is perfect. My car stops traffic wherever it goes.",
+    text: "Εξαιρετικός επαγγελματίας ο Γιάννης… απίστευτη εφαρμογή του PPF… πάνω απ όλα φιλικός κ πρόθυμος να σε καθοδηγήσει κ να σου λύσει τις οποίες απορίες.συστήνω ανεπιφύλακτα wraptech!", 
     color: "#DC2626",
   },
   {
-    name: "Sophia Laurent",
-    role: "Lamborghini Urus Owner",
-    initials: "SL",
+    name: "Βασίλης Λολης",
+    role: "BMW E92",
+    initials: "ΒΛ",
     rating: 5,
-    text: "The PPF installation on my Urus was flawless. You can't even tell it's there, but I have complete peace of mind on the road. Worth every penny.",
+    text: "Άριστοι επαγγελματίες του είδους με διάφορα από τους υπόλοιπους εξυπηρετικοι και σε φυσιολογικές τιμές !Στο αυτοκίνητο μου έγινε ολική κάλυψη με αυτοκόλλητη μεμβράνη, τοποθετήθηκαν αντιηλιακές μεμβράνες στα τζάμπα , προστατευτική μεμβράνη στα φανάρια και έγινε ντύσιμο στα εσωτερικά πλαστικά.",
     color: "#DC2626",
   },
   {
-    name: "James Okafor",
-    role: "BMW M4 Owner",
-    initials: "JO",
+    name: "Chrysostomos Tasios",
+    role: "Opel Corsa",
+    initials: "CT",
     rating: 5,
-    text: "Ceramic coating has made washing my M4 an absolute joy. Water just slides right off. Three years later and it still looks showroom fresh.",
+    text: "Πήγα στα παιδιά να βάλω μεμβράνες στο αυτοκίνητο μου, πέραν της απίστευτα καλής δουλειάς τους, είναι και πάρα πολύ ευχάριστοι και ευγενικοί άνθρωποι!! Πέραν αυτού ενδιαφέρονται για τα αυτοκίνητα των πελατών τους και προσφέρουν απόλυτη διαφάνεια και ενημερώνουν σε περίπτωση που βρουν κάποια υπάρχουσα ατέλεια (έγινε και στην δικιά μου περίπτωση) Χάρηκα πολύ για την γνωριμία και την συνεργασία!",
     color: "#991B1B",
   },
 ];
