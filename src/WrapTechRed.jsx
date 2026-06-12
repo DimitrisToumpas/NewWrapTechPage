@@ -1313,7 +1313,7 @@ function ServiceCard({ service }) {
 
   const handleDoubleClick = () => {
     //navigate('/detailsInfo');
-    window.open('/detailsInfo.html', '_blank');
+    window.open('./detailsInfo.html', '_blank');
   };
   
   return (
