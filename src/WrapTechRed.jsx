@@ -574,6 +574,38 @@ export default function WrapTech() {
           </span>
         </div>
 
+
+        {/* Desktop Navigation Links */}
+  {!isMobile && (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "2rem",
+      }}
+    >
+      {NAV_LINKS.map((link) => (
+        <button
+          key={link}
+          onClick={() => scrollTo(link.toLowerCase())}
+          style={{
+            background: "none",
+            border: "none",
+            color: "#fff",
+            cursor: "pointer",
+            fontSize: "0.9rem",
+            fontWeight: 500,
+            transition: "color 0.2s ease",
+          }}
+          onMouseEnter={(e) => (e.target.style.color = "#DC2626")}
+          onMouseLeave={(e) => (e.target.style.color = "#fff")}
+        >
+          {link}
+        </button>
+      ))}
+    </div>
+  )}
+
         {/* Δεξιά πλευρά του Nav: Social + Κουμπί Επικοινωνίας */}
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           
