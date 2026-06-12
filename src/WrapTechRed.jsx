@@ -162,7 +162,7 @@ const STATS = [
   { value: 1200, suffix: "+", label: "Οχηματα που Εξυπηρετηθηκαν"},
   { value: 6, suffix: "+", label: "Χρονια Εμπειριας" },
   { value: 250, suffix: "+", label: "Τοποθετησεις PPF" },
-  { value: 4.9, suffix: "", label: "Αξιολογηση Πελατων" },
+  { value: 5.0, suffix: "", label: "Αξιολογηση Πελατων" },
 ];
 
 const TESTIMONIALS = [
