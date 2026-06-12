@@ -6,6 +6,8 @@ const NAV_LINKS = ["Services", "Portfolio", "About", "Contact"];
 import redCar from "./assets/red-car-wraps-31726338474095.jpg";
 import audi from "./assets/audi-4.png";
 import interior from "./assets/picsvg_download.svg";
+import wrapInstall from  "./assets/IanWrapTech.jpg";
+import wrapMotorbike from  "./assets/motorbikeWrap.jpg";
 
 // Τα επίσημα λογότυπα σε μορφή SVG path
 const SOCIAL_LINKS = [
@@ -190,14 +192,13 @@ const TESTIMONIALS = [
   },
 ];
 
-
 const PORTFOLIO_ITEMS = [
   {
     id: 1,
     label: "Matte Black Supra",
     tag: "Wrap",
     tall: true,
-    image: audi,
+    image: wrapMotorbike,
   },
   {
     id: 2,
@@ -211,7 +212,7 @@ const PORTFOLIO_ITEMS = [
     label: "Chrome Delete G-Wagon",
     tag: "Wrap",
     tall: false,
-    image: audi,
+    image: wrapInstall,
   },
   {
     id: 4,
@@ -232,13 +233,13 @@ const PORTFOLIO_ITEMS = [
     label: "Full PPF McLaren 720S",
     tag: "PPF",
     tall: false,
-    image: audi,
+    image: wrapInstall,
   },
 ];
 
 
 {/*const PORTFOLIO_ITEMS = [
-  { id: 1, label: "Matte Black Supra", tag: "Wrap", tall: true, hue: "20,20,20" },
+  { id: 1, label: "Matte Black Supra", tag: "Wrap", tall: false, hue: "20,20,20" },
   { id: 2, label: "Satin PPF Porsche", tag: "PPF", tall: false, hue: "30,30,30" },
   { id: 3, label: "Chrome Delete G-Wagon", tag: "Wrap", tall: false, hue: "15,15,15" },
   { id: 4, label: "Ceramic Coated R8", tag: "Ceramic", tall: true, hue: "25,25,25" },
