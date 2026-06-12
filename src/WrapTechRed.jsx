@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect, useRef, useCallback } from "react";
 import logo from "./assets/WrapTechThumbnail.jpg";
 import carInterior from "./assets/carIn.svg" ;
@@ -1310,11 +1311,19 @@ function ServiceCard({ service }) {
 
   // Έλεγχος αν το icon είναι emoji (μικρό string) ή URL από το import του SVG
   const isEmoji = typeof service.icon === 'string' && service.icon.length < 5;
+  
+  const navigate = useNavigate();
 
+  const handleDoubleClick = () => {
+    //navigate('/detailsInfo');
+    window.open('/detailsInfo.html', '_blank');
+  };
+  
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onDoubleClick={() => handleDoubleClick()}
       style={{
         background: "rgba(16, 12, 12, 0.6)",
         border: hovered ? "1px solid rgba(205,56,55,0.3)" : "1px solid rgba(205,56,55,0.1)",
