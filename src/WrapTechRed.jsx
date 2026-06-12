@@ -1315,7 +1315,7 @@ function ServiceCard({ service }) {
                 height: "80px", 
                 objectFit: "contain",
                 // Αν θες να κοκκινίζει ελαφρώς στο hover (προαιρετικό):
-                filter: hovered ? "drop-shadow(0 0 4px rgba(205,56,55,0.5))" : "none",
+                filter: hovered ? "drop-shadow(0 0 4px rgba(205,56,55,0.5)) brightness(0)" : "none",
                 transition: "filter 0.3s"
               }} 
             />
