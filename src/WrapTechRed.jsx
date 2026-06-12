@@ -5,6 +5,7 @@ import carWrap from "./assets/CarWrap.svg" ;
 const NAV_LINKS = ["Services", "Portfolio", "About", "Contact"];
 import redCar from "./assets/red-car-wraps-31726338474095.jpg";
 import audi from "./assets/audi-4.png";
+import interior from "./assets/Interior.svg";
 
 // Τα επίσημα λογότυπα σε μορφή SVG path
 const SOCIAL_LINKS = [
@@ -147,7 +148,7 @@ const SERVICES = [
     tag: "PPF",
   },
   {
-    icon: "🏙️",
+    icon: interior,
     title: "Εφαρμογές Κτηρίων",
     desc: "Εξειδικευμένες λύσεις μεμβρανών που συνδυάζουν κομψότητα και προστασία. Οι μεμβράνες ασφαλείας ενισχύουν τα τζάμια ενάντια σε χτυπήματα. Ενώ οι διακοσμητικές μεμβράνες ανανεώνουν ριζικά έπιπλα και συσκευές. Μια ολοκληρωμένη αναβάθμιση για κάθε χώρο.",
     tag: "Spaces",
