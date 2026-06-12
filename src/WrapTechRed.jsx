@@ -68,16 +68,18 @@ function ResponsiveSocials({ isMobile }) {
   background: rgba(255, 255, 255, 0.03) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   color: #fff !important;
-  /* Αυξάνουμε ελαφρώς το χρόνο και προσθέτουμε το transform στο transition */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  /* Όταν ξε-πατάς το κουμπί, επιστρέφει αργά (0.4s) */
+  transition: all 0.4s ease-in-out !important;
 }
 
 /* Mobile Touch Feedback */
 .social-icon-link:active {
-  background: #DC2626 !important; /* Προσθήκη background για να φανεί το πάτημα */
+  /* Όταν το πατάς, γίνεται ΚΟΚΚΙΝΟ ακαριαία (0 δευτερόλεπτα) για να "προλάβει" το κλικ */
+  transition: none !important; 
+  background: #DC2626 !important;
   color: #fff !important;
   border-color: #DC2626 !important;
-  transform: scale(0.90) !important; /* Πιο έντονο μίκρεμα για να γίνει αισθητό στο χέρι */
+  transform: scale(0.88) !important; /* Λίγο πιο βαθύ κλικ */
 }
 
 /* Desktop Hover & Active Effects */
@@ -86,12 +88,13 @@ function ResponsiveSocials({ isMobile }) {
     background: #DC2626 !important;
     border-color: #DC2626 !important;
     color: #000 !important;
+    transition: all 0.2s ease !important;
   }
   .social-icon-link:active {
     background: #B91C1C !important;
     border-color: #B91C1C !important;
     color: #000 !important;
-    transform: scale(0.92) !important; /* Έντονο feedback και στο desktop */
+    transform: scale(0.92) !important;
   }
   .desktop-sidebar-link:hover {
     transform: translateX(5px) !important;
