@@ -120,6 +120,7 @@ function ResponsiveSocials({ isMobile }) {
           <a
             key={social.name}
             href={social.url}
+            onClick={(e) => handleSafeLinkClick(e, link.url)}
             target="_blank"
             rel="noopener noreferrer"
             style={itemStyle}
@@ -133,6 +134,16 @@ function ResponsiveSocials({ isMobile }) {
     </div>
   );
 }
+
+const handleSafeLinkClick = (e, url) => {
+  e.preventDefault(); // Σταματάει το ακαριαίο άνοιγμα
+  
+  // Το link ανοίγει κανονικά μετά από 150ms (ίσα που να προλάβει το μάτι να δει το κόκκινο)
+  setTimeout(() => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }, 150);
+};
+
 
 
 const SERVICES = [
