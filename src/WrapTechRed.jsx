@@ -135,45 +135,7 @@ function ResponsiveSocials({ isMobile }) {
   );
 }
 
-const ServiceCard = ({ service }) => {
-  // Αν το string έχει μήκος μικρότερο από 5 χαρακτήρες, είναι σίγουρα emoji!
-  const isEmoji = typeof service.icon === 'string' && service.icon.length < 5;
 
-  return (
-    <div style={{
-      background: "rgba(16, 12, 12, 0.6)",
-      border: "1px solid rgba(205, 56, 55, 0.15)", // Premium red #CD3837 με opacity
-      padding: "2.5rem",
-      borderRadius: "12px",
-    }}>
-      <div style={{ 
-        fontSize: "2rem", 
-        marginBottom: "1.5rem", 
-        display: "flex", 
-        alignItems: "center",
-        minHeight: "40px" // Κρατάει σταθερό ύψος για να μην κουνιέται το κείμενο
-      }}>
-        {isEmoji ? (
-          /* Εδώ γίνεται render το Emoji */
-          service.icon
-        ) : (
-          /* Εδώ γίνεται render το SVG ως απλή εικόνα μέσω του URL του */
-          <img 
-            src={service.icon} 
-            alt={service.title} 
-            style={{ width: "40px", height: "40px", objectFit: "contain" }} 
-          />
-        )}
-      </div>
-      <h3 style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: "1rem" }}>
-        {service.title}
-      </h3>
-      <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.9rem", lineHeight: 1.6 }}>
-        {service.desc}
-      </p>
-    </div>
-  );
-};
 
 
 const SERVICES = [
@@ -1322,6 +1284,44 @@ export default function WrapTech() {
   
 function ServiceCard({ service }) {
   const [hovered, setHovered] = useState(false);
+  // Αν το string έχει μήκος μικρότερο από 5 χαρακτήρες, είναι σίγουρα emoji!
+  const isEmoji = typeof service.icon === 'string' && service.icon.length < 5;
+
+  return (
+    <div style={{
+      background: "rgba(16, 12, 12, 0.6)",
+      border: "1px solid rgba(205, 56, 55, 0.15)", // Premium red #CD3837 με opacity
+      padding: "2.5rem",
+      borderRadius: "12px",
+    }}>
+      <div style={{ 
+        fontSize: "2rem", 
+        marginBottom: "1.5rem", 
+        display: "flex", 
+        alignItems: "center",
+        minHeight: "40px" // Κρατάει σταθερό ύψος για να μην κουνιέται το κείμενο
+      }}>
+        {isEmoji ? (
+          /* Εδώ γίνεται render το Emoji */
+          service.icon
+        ) : (
+          /* Εδώ γίνεται render το SVG ως απλή εικόνα μέσω του URL του */
+          <img 
+            src={service.icon} 
+            alt={service.title} 
+            style={{ width: "40px", height: "40px", objectFit: "contain" }} 
+          />
+        )}
+      </div>
+      <h3 style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: "1rem" }}>
+        {service.title}
+      </h3>
+      <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.9rem", lineHeight: 1.6 }}>
+        {service.desc}
+      </p>
+    </div>
+  );
+};
   return (
     <div
       onMouseEnter={() => setHovered(true)}
@@ -1351,20 +1351,79 @@ function ServiceCard({ service }) {
           color: "#DC2626",
           fontSize: "0.65rem",
           letterSpacing: "0.1em",
+function ServiceCard({ service }) {
+  const [hovered, setHovered] = useState(false);
+
+  // Έλεγχος αν το icon είναι emoji (μικρό string) ή URL από το import του SVG
+  const isEmoji = typeof service.icon === 'string' && service.icon.length < 5;
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        background: "rgba(16, 12, 12, 0.6)",
+        border: hovered ? "1px solid rgba(205,56,55,0.3)" : "1px solid rgba(205,56,55,0.1)",
+        padding: "2.5rem",
+        borderRadius: "12px",
+        transition: "all 0.3s ease",
+        position: "relative",
+      }}
+    >
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginBottom: "1.5rem",
+      }}>
+        {/* Εικονίδιο: Είτε Emoji είτε το SVG σου μέσω <img> */}
+        <div style={{ 
+          fontSize: "2rem", 
+          display: "flex", 
+          alignItems: "center", 
+          minHeight: "40px" 
+        }}>
+          {isEmoji ? (
+            service.icon
+          ) : (
+            <img 
+              src={service.icon} 
+              alt={service.title} 
+              style={{ 
+                width: "40px", 
+                height: "40px", 
+                objectFit: "contain",
+                // Αν θες να κοκκινίζει ελαφρώς στο hover (προαιρετικό):
+                filter: hovered ? "drop-shadow(0 0 4px rgba(205,56,55,0.5))" : "none",
+                transition: "filter 0.3s"
+              }} 
+            />
+          )}
+        </div>
+
+        {/* Το Tag της κάρτας */}
+        <span style={{
+          fontSize: "0.7rem",
+          color: "#CD3837",
+          background: "rgba(205,56,55,0.1)",
           textTransform: "uppercase",
           padding: "0.3rem 0.7rem",
           borderRadius: 20,
-          border: "1px solid rgba(220,38,38,0.2)",
+          border: "1px solid rgba(205,56,55,0.2)",
         }}>{service.tag}</span>
       </div>
+
+      {/* Τίτλος */}
       <h3 style={{
         fontSize: "1.2rem",
         fontWeight: 700,
         marginBottom: "0.75rem",
         letterSpacing: "-0.02em",
-        color: hovered ? "#DC2626" : "#fff",
+        color: hovered ? "#CD3837" : "#fff",
         transition: "color 0.3s",
       }}>{service.title}</h3>
+
+      {/* Περιγραφή */}
       <p style={{ color: "#777", fontSize: "0.9rem", lineHeight: 1.6 }}>{service.desc}</p>
     </div>
   );
