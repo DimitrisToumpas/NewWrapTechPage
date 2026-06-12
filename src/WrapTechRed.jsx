@@ -1321,8 +1321,8 @@ function ServiceCard({ service }) {
               src={service.icon} 
               alt={service.title} 
               style={{ 
-                width: "40px", 
-                height: "40px", 
+                width: "80px", 
+                height: "80px", 
                 objectFit: "contain",
                 // Αν θες να κοκκινίζει ελαφρώς στο hover (προαιρετικό):
                 filter: hovered ? "drop-shadow(0 0 4px rgba(205,56,55,0.5))" : "none",
