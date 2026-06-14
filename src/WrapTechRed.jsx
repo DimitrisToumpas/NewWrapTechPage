@@ -18,7 +18,8 @@ const portfolioGreek= [
 "Τα έργα μας",
 "Το έργο μας",
 "Δημιουργίες",
-]
+];
+
 // Τα επίσημα λογότυπα σε μορφή SVG path
 const SOCIAL_LINKS = [
   {
