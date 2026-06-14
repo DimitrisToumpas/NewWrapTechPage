@@ -1417,10 +1417,84 @@ function PortfolioCard({ item }) {
           ? "linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 60%)"
           : "linear-gradient(0deg, rgba(0,0,0,0.6) 0%, transparent 80%)",
         transition: "all 0.35s ease",
+function PortfolioCard({ item }) {
+  const [hovered, setHovered] = useState(false);
+  const isLarge = item.tall;
+  const patterns = [
+    "radial-gradient(circle at 30% 70%, rgba(220,38,38,0.15) 0%, transparent 60%), linear-gradient(135deg, #111 0%, #1a1a1a 100%)",
+    "radial-gradient(circle at 70% 30%, rgba(220,38,38,0.1) 0%, transparent 60%), linear-gradient(225deg, #0d0d0d 0%, #1a1a1a 100%)",
+    "radial-gradient(ellipse at 50% 50%, rgba(220,38,38,0.08) 0%, transparent 70%), linear-gradient(90deg, #111 0%, #181818 100%)",
+    "radial-gradient(circle at 20% 80%, rgba(220,38,38,0.12) 0%, transparent 60%), linear-gradient(180deg, #131313 0%, #0a0a0a 100%)",
+    "radial-gradient(circle at 80% 20%, rgba(220,38,38,0.1) 0%, transparent 60%), linear-gradient(315deg, #0e0e0e 0%, #1c1c1c 100%)",
+    "radial-gradient(ellipse at 40% 60%, rgba(220,38,38,0.08) 0%, transparent 70%), linear-gradient(45deg, #121212 0%, #1a1a1a 100%)",
+  ];
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        borderRadius: 12,
+        overflow: "hidden",
+        background: patterns[item.id - 1],
+        // Κρατάμε μόνο την εξωτερική σκιά εδώ, αν τη θέλετε
+        boxShadow: hovered ? "0 4px 20px rgba(220,38,38,0.15)" : "0 4px 12px rgba(0,0,0,0.1)",
+        transition: "all 0.35s ease",
+        cursor: "pointer",
+        position: "relative",
+        gridRow: isLarge ? "span 2" : "span 1",
+        height: "100%",
+        minHeight: isLarge ? 460 : 220,
+        display: "flex", 
+        alignItems: "flex-end",
+        transform: hovered ? "scale(1.01)" : "scale(1)",
+        willChange: "transform", // Προστασία από θόλωμα στο scale
+      }}
+    >
+      {/* Container Φωτογραφίας */}
+      <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
+        <img
+          src={item.image}
+          alt={item.label}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: hovered ? 0.9 : 0.75,
+            transform: hovered ? "scale(1.05)" : "scale(1)",
+            transition: "all 0.35s ease",
+          }}
+        />
+        
+        {/* ΤΟ ΝΕΟ OVERLAY: Αυτό δημιουργεί το περίγραμμα ΠΑΝΩ στη φωτογραφία */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          borderRadius: 12,
+          pointerEvents: "none", // Επιτρέπει στα clicks να περνάνε από κάτω
+          boxShadow: hovered
+            ? "inset 0 0 0 2px rgba(220,38,38,0.6)" // 2px έντονο κόκκινο στο hover
+            : "inset 0 0 0 1px rgba(255,255,255,0.1)", // 1px απαλό λευκό κανονικά
+          transition: "box-shadow 0.35s ease",
+          zIndex: 1,
+        }} />
+      </div>
+      
+      {/* Gradient Σκότους στο κάτω μέρος */}
+      <div style={{
+        position: "absolute", 
+        inset: 0,
+        zIndex: 2, // Πάνω από το περίγραμμα της φωτογραφίας
+        background: hovered
+          ? "linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 60%)"
+          : "linear-gradient(0deg, rgba(0,0,0,0.6) 0%, transparent 80%)",
+        transition: "all 0.35s ease",
       }} />
 
+      {/* Container Κειμένου */}
       <div style={{
-        position: "relative", zIndex: 1,
+        position: "relative", 
+        zIndex: 3, // Πάνω από όλα
         padding: "1.25rem",
         width: "100%",
         transform: hovered ? "translateY(0)" : "translateY(4px)",
@@ -1442,6 +1516,7 @@ function PortfolioCard({ item }) {
           fontWeight: 600,
           fontSize: "0.95rem",
           letterSpacing: "-0.01em",
+          color: "#fff"
         }}>{item.label}</div>
       </div>
     </div>
