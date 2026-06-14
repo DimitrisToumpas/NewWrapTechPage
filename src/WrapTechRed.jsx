@@ -9,6 +9,16 @@ import interior from "./assets/picsvg_download.svg";
 import wrapInstall from  "./assets/IanWrapTech.jpg";
 import wrapMotorbike from  "./assets/motorbikeWrap.jpg";
 
+
+const portfolioGreek= [
+"Πορτφόλιο",
+"Έργα",
+"Δείγματα έργων",
+"Η δουλειά μας",
+"Τα έργα μας",
+"Το έργο μας",
+"Δημιουργίες",
+]
 // Τα επίσημα λογότυπα σε μορφή SVG path
 const SOCIAL_LINKS = [
   {
@@ -782,7 +792,7 @@ export default function WrapTech() {
               color: storyProgress > 0.4 ? "#DC2626" : "#222",
               transition: "color 0.5s ease",
             }}>
-              Δημιουργούμε την<br />προσωπικότητα του οχήματός σας.
+              Δημιουργούμε την<br />προσωπικότητα του οχήματός σου.
             </p>
           </ScrollReveal>
 
@@ -914,7 +924,7 @@ export default function WrapTech() {
           fontWeight: 800,
           letterSpacing: "-0.03em",
         }}>
-          Portfolio
+          {portfolioGreek[index]}
         </h2>
       </div>
     </ScrollReveal>
@@ -1522,5 +1532,26 @@ function TestimonialCard({ testimonial }) {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function PortfolioTitle() {
+  const [index, setIndex] = useState(0);
+
+  const handleClick = () => {
+    setIndex((prev) => (prev + 1) % portfolioGreek.length);
+  };
+
+  return (
+    <h2
+      onClick={handleClick}
+      style={{
+        cursor: "pointer",
+        transition: "0.2s ease",
+        userSelect: "none",
+      }}
+    >
+      {portfolioGreek[index]}
+    </h2>
   );
 }
