@@ -1143,13 +1143,13 @@ export default function WrapTech() {
               lineHeight: 1.0,
               marginBottom: "1.5rem",
             }}>
-              Ready to transform<br />
+              Έτοιμος να μεταμορφώσεις<br />
               <span style={{
                 background: "linear-gradient(135deg, #DC2626, #EF4444)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-              }}>your vehicle?</span>
+              }}>το όχημά σου;</span>
             </h2>
           </ScrollReveal>
 
