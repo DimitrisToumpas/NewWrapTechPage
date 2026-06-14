@@ -925,7 +925,7 @@ export default function WrapTech() {
           fontWeight: 800,
           letterSpacing: "-0.03em",
         }}>
-          <PortfolioTitle />
+          Η δουλειά μας 
         </h2>
       </div>
     </ScrollReveal>
@@ -1536,7 +1536,7 @@ function TestimonialCard({ testimonial }) {
   );
 }
 
-function PortfolioTitle() {
+/*function PortfolioTitle() {
   const [index, setIndex] = useState(0);
 
   const handleClick = () => {
@@ -1557,4 +1557,4 @@ function PortfolioTitle() {
       {portfolioGreek[index]}
     </span>
   );
-}
+} */
