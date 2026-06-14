@@ -9,6 +9,10 @@ import interior from "./assets/picsvg_download.svg";
 import wrapInstall from  "./assets/IanWrapTech.jpg";
 import wrapMotorbike from  "./assets/motorbikeWrap.jpg";
 
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
 
 const portfolioGreek= [
 "Πορτφόλιο",
@@ -1151,7 +1155,7 @@ export default function WrapTech() {
               fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
               fontWeight: 900,
               letterSpacing: "-0.04em",
-              lineHeight: 1.5,
+              lineHeight: 1.2,
               marginBottom: "1.5rem",
             }}>
               Έτοιμος να μεταμορφώσεις<br />
