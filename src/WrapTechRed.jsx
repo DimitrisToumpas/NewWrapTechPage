@@ -1151,7 +1151,7 @@ export default function WrapTech() {
               fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
               fontWeight: 900,
               letterSpacing: "-0.04em",
-              lineHeight: 1.0,
+              lineHeight: 1.5,
               marginBottom: "1.5rem",
             }}>
               Έτοιμος να μεταμορφώσεις<br />
