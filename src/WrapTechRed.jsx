@@ -1027,44 +1027,57 @@ export default function WrapTech() {
         gap: "2rem",
       }}
     >
+      
+      {/* 📍 ADDRESS CARD */}
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=%CE%A4%CE%B6%CF%89%CE%BD+%CE%9A%CE%AD%CE%BD%CE%BD%CE%B5%CE%BD%CF%84%CF%85+12%2C+%CE%A0%CF%85%CE%BB%CE%B1%CE%AF%CE%B1+555+35"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          textDecoration: "none",
+          display: "block",
+        }}
+      >
+        <div
+          style={{
+            padding: "2rem",
+            background: "rgba(255,255,255,0.02)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: "16px",
+            cursor: "pointer",
+            transition: "all 0.25s ease",
+            transform: "translateY(0px)",
+            boxShadow: "none",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.border = "1px solid #EF4444";
+            e.currentTarget.style.background = "rgba(220, 38, 38, 0.06)";
+            e.currentTarget.style.transform = "translateY(-4px)";
+            e.currentTarget.style.boxShadow =
+              "0 10px 30px rgba(220, 38, 38, 0.15)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.border = "1px solid rgba(255,255,255,0.08)";
+            e.currentTarget.style.background = "rgba(255,255,255,0.02)";
+            e.currentTarget.style.transform = "translateY(0px)";
+            e.currentTarget.style.boxShadow = "none";
+          }}
+        >
+          <h3 style={{ color: "#DC2626", marginBottom: "1rem" }}>
+            📍 Διεύθυνση
+          </h3>
 
-            <a 
-  href="https://www.google.com/maps/search/?api=1&query=%CE%A4%CE%B6%CF%89%CE%BD+%CE%9A%CE%AD%CE%BD%CE%BD%CE%B5%CE%BD%CF%84%CF%85+12%2C+%CE%A0%CF%85%CE%BB%CE%B1%CE%AF%CE%B1+555+35"
-  target="_blank" 
-  rel="noopener noreferrer"
-  style={{ textDecoration: "none", display: "block" }}
->
-  <div
-    style={{
-      padding: "2rem",
-      background: "rgba(255,255,255,0.02)",
-      border: "1px solid #DC2626", // Κόκκινο περίγραμμα εξ ορισμού
-      borderRadius: "16px",
-      cursor: "pointer",
-      transition: "all 0.2s ease", // Ομαλή μετάβαση για το border και το background
-    }}
-    // Όταν το ποντίκι μπαίνει, το περίγραμμα φωτίζει και το background αλλάζει ελαφρώς
-    onMouseEnter={(e) => {
-      e.currentTarget.style.border = "1px solid #EF4444";
-      e.currentTarget.style.background = "rgba(220, 38, 38, 0.05)"; // Ελαφρύ κόκκινο tint στο background
-    }}
-    // Όταν το ποντίκι βγαίνει, επιστρέφει στην αρχική κατάσταση
-    onMouseLeave={(e) => {
-      e.currentTarget.style.border = "1px solid #DC2626";
-      e.currentTarget.style.background = "rgba(255,255,255,0.02)";
-    }}
-  >
-    <h3 style={{ color: "#DC2626", marginBottom: "1rem" }}>
-      📍 Διεύθυνση
-    </h3>
+          <p style={{ color: "#ccc", lineHeight: 1.8 }}>
+            Τζων Κέννεντυ 12
+            <br />
+            Πυλαία 555 35
+          </p>
+        </div>
+      </a>
 
-    <p style={{ color: "#ccc", lineHeight: 1.8 }}>
-      Τζων Κέννεντυ 12
-      <br />
-      Πυλαία 555 35
-    </p>
-  </div>
-</a>
+    </div>
+  </ScrollReveal>
+</section>
 
             <div
         style={{
