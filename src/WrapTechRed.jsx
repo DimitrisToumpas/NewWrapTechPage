@@ -934,36 +934,43 @@ export default function WrapTech() {
       </section>
 
       {/* ─────────── PORTFOLIO ─────────── */}
-      <section id="portfolio" style={{ padding: "8rem 2rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <ScrollReveal>
-            <div style={{ textAlign: "center", marginBottom: "4rem" }}>
-              <div style={{
-                color: "#DC2626", fontSize: "0.75rem", letterSpacing: "0.2em",
-                textTransform: "uppercase", marginBottom: "1rem",
-              }}>Our Work</div>
-              <h2 style={{
-                fontSize: "clamp(2rem, 4vw, 3.5rem)",
-                fontWeight: 800, letterSpacing: "-0.03em",
-              }}>Portfolio</h2>
-            </div>
-          </ScrollReveal>
+<section id="portfolio" style={{ padding: "8rem 2rem" }}>
+  <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+    <ScrollReveal>
+      <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+        <div style={{
+          color: "#DC2626", fontSize: "0.75rem", letterSpacing: "0.2em",
+          textTransform: "uppercase", marginBottom: "1rem",
+        }}>Our Work</div>
+        <h2 style={{
+          fontSize: "clamp(2rem, 4vw, 3.5rem)",
+          fontWeight: 800, letterSpacing: "-0.03em",
+        }}>Portfolio</h2>
+      </div>
+    </ScrollReveal>
 
+    <div style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", // Κάνει το grid αυτόματα responsive!
+      gridAutoRows: "220px",
+      gridAutoFlow: "dense", // Γεμίζει αυτόματα τα κενά
+      gap: "0.75rem",
+    }}>
+      {PORTFOLIO_ITEMS.map((item, i) => (
+        <ScrollReveal key={item.id} delay={i * 0.08} direction="none">
           <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gridAutoRows: "220px",
-            gap: "0.75rem",
+            gridRow: item.tall ? "span 2" : "span 1", // Αν είναι tall, πιάνει 2 σειρές ύψος
+            height: "100%",
+            width: "100%"
           }}>
-            {PORTFOLIO_ITEMS.map((item, i) => (
-              <ScrollReveal key={item.id} delay={i * 0.08} direction="none">
-                <PortfolioCard item={item} />
-              </ScrollReveal>
-            ))}
+            <PortfolioCard item={item} />
           </div>
-        </div>
-      </section>
-
+        </ScrollReveal>
+      ))}
+    </div>
+  </div>
+</section>
+        
       {/* ─────────── TESTIMONIALS ─────────── */}
       <section style={{
         padding: "8rem 2rem",
@@ -1311,16 +1318,11 @@ function ServiceCard({ service }) {
   // Έλεγχος αν το icon είναι emoji (μικρό string) ή URL από το import του SVG
   const isEmoji = typeof service.icon === 'string' && service.icon.length < 5;
 
-  const handleDoubleClick = () => {
-    //navigate('/detailsInfo');
-    window.open('detailsInfo.html', '_blank');
-  };
   
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      onDoubleClick={() => handleDoubleClick()}
       style={{
         background: "rgba(16, 12, 12, 0.6)",
         border: hovered ? "1px solid rgba(205,56,55,0.3)" : "1px solid rgba(205,56,55,0.1)",
