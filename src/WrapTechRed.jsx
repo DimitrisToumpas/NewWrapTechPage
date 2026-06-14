@@ -894,7 +894,7 @@ export default function WrapTech() {
       </section>
 
       {/* ─────────── PORTFOLIO ─────────── */}
-      On id="portfolio" style={{ padding: "8rem 2rem" }}>
+<section id="portfolio" style={{ padding: "8rem 2rem" }}>
   <div style={{ maxWidth: 1200, margin: "0 auto" }}>
     <ScrollReveal>
       <div style={{ textAlign: "center", marginBottom: "4rem" }}>
