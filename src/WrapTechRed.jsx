@@ -768,7 +768,7 @@ export default function WrapTech() {
               color: storyProgress > 0.2 ? "#fff" : "#333",
               transition: "color 0.5s ease",
             }}>
-              We don't just change<br />the color.
+              Δεν αλλάζουμε απλώς<br />το χρώμα.
             </p>
           </ScrollReveal>
 
@@ -782,7 +782,7 @@ export default function WrapTech() {
               color: storyProgress > 0.4 ? "#DC2626" : "#222",
               transition: "color 0.5s ease",
             }}>
-              We transform the entire<br />presence of your vehicle.
+              Δημιουργούμε την<br />προσωπικότητα του οχήματός σας.
             </p>
           </ScrollReveal>
 
@@ -848,7 +848,7 @@ export default function WrapTech() {
                 fontSize: "clamp(2rem, 4vw, 3.5rem)",
                 fontWeight: 800,
                 letterSpacing: "-0.03em",
-              }}>Precision Services</h2>
+              }}>Υπηρεσίες</h2>
             </div>
           </ScrollReveal>
 
