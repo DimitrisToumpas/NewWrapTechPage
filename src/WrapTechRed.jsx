@@ -1377,7 +1377,9 @@ function PortfolioCard({ item }) {
         borderRadius: 12,
         overflow: "hidden",
         background: patterns[item.id - 1],
-        border: `1px solid ${hovered ? "rgba(220,38,38,0.4)" : "rgba(255,255,255,0.05)"}`,
+        boxShadow: hovered
+        ? "inset 0 0 0 1px rgba(220,38,38,0.4)" 
+        : "inset 0 0 0 1px rgba(255,255,255,0.05,
         transition: "all 0.35s ease",
         cursor: "pointer",
         position: "relative",
