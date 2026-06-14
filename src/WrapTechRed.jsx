@@ -925,7 +925,7 @@ export default function WrapTech() {
           fontWeight: 800,
           letterSpacing: "-0.03em",
         }}>
-          {portfolioGreek[index]}
+          <PortfolioTitle />
         </h2>
       </div>
     </ScrollReveal>
@@ -1544,15 +1544,17 @@ function PortfolioTitle() {
   };
 
   return (
-    <h2
+    <span
       onClick={handleClick}
       style={{
+        fontSize: "clamp(2rem, 4vw, 3.5rem)",
+        fontWeight: 800,
+        letterSpacing: "-0.03em",
         cursor: "pointer",
-        transition: "0.2s ease",
         userSelect: "none",
       }}
     >
       {portfolioGreek[index]}
-    </h2>
+    </span>
   );
 }
