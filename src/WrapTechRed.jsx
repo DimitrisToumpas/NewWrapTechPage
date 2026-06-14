@@ -238,15 +238,6 @@ const PORTFOLIO_ITEMS = [
 ];
 
 
-{/*const PORTFOLIO_ITEMS = [
-  { id: 1, label: "Matte Black Supra", tag: "Wrap", tall: false, hue: "20,20,20" },
-  { id: 2, label: "Satin PPF Porsche", tag: "PPF", tall: false, hue: "30,30,30" },
-  { id: 3, label: "Chrome Delete G-Wagon", tag: "Wrap", tall: false, hue: "15,15,15" },
-  { id: 4, label: "Ceramic Coated R8", tag: "Ceramic", tall: true, hue: "25,25,25" },
-  { id: 5, label: "Crimson Red GT-R", tag: "Wrap", tall: false, hue: "18,18,18" },
-  { id: 6, label: "Full PPF McLaren 720S", tag: "PPF", tall: false, hue: "22,22,22" },
-]; */}
-
 function useCountUp(target, duration = 2000, start = false) {
   const [count, setCount] = useState(0);
   useEffect(() => {
@@ -267,37 +258,6 @@ function useCountUp(target, duration = 2000, start = false) {
   }, [start, target, duration]);
   return count;
 }
-
-{/*function StatCard({ stat, inView }) {
-  const count = useCountUp(stat.value, 2000, inView);
-  return (
-    <div style={{
-      textAlign: "center",
-      padding: "2rem 1rem",
-    }}>
-      <div style={{
-        fontSize: "clamp(2.5rem, 6vw, 4rem)",
-        fontWeight: 800,
-        letterSpacing: "-0.02em",
-        background: "linear-gradient(135deg, #fff 0%, #DC2626 100%)",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
-        backgroundClip: "text",
-        lineHeight: 1,
-        marginBottom: "0.5rem",
-      }}>
-        {stat.value % 1 !== 0 ? count.toFixed(1) : count.toLocaleString()}{stat.suffix}
-      </div>
-      <div style={{
-        color: "#888",
-        fontSize: "0.9rem",
-        letterSpacing: "0.1em",
-        textTransform: "uppercase",
-        fontWeight: 500,
-      }}>{stat.label}</div>
-    </div>
-  );
-} */}
 
 
 function StatCard({ stat, inView }) {
@@ -957,16 +917,21 @@ export default function WrapTech() {
       gap: "0.75rem",
     }}>
       {PORTFOLIO_ITEMS.map((item, i) => (
-        <ScrollReveal key={item.id} delay={i * 0.08} direction="none">
-          <div style={{
-            gridRow: item.tall ? "span 2" : "span 1", // Αν είναι tall, πιάνει 2 σειρές ύψος
-            height: "100%",
-            width: "100%"
-          }}>
-            <PortfolioCard item={item} />
-          </div>
-        </ScrollReveal>
-      ))}
+  <ScrollReveal key={item.id} delay={i * 0.08} direction="none">
+    <div style={{
+      gridRow: item.tall ? "span 2" : "span 1",
+      height: "100%",
+      width: "100%",
+      // Αυτές οι 3 γραμμές λύνουν το πρόβλημα του "καλύμματος":
+      position: "relative",
+      zIndex: item.tall ? 10 : 1, 
+      backgroundColor: "#111" // Ένα background βοηθάει να μην φαίνεται κενό από πίσω
+    }}>
+      <PortfolioCard item={item} />
+    </div>
+  </ScrollReveal>
+))}
+
     </div>
   </div>
 </section>
