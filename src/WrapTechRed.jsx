@@ -894,7 +894,29 @@ export default function WrapTech() {
       </section>
 
       {/* ─────────── PORTFOLIO ─────────── */}
-<secti{PORTFOLIO_ITEMS.map((item, i) => (
+      On id="portfolio" style={{ padding: "8rem 2rem" }}>
+  <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+    <ScrollReveal>
+      <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+        <div style={{
+          color: "#DC2626", fontSize: "0.75rem", letterSpacing: "0.2em",
+          textTransform: "uppercase", marginBottom: "1rem",
+        }}>Our Work</div>
+        <h2 style={{
+          fontSize: "clamp(2rem, 4vw, 3.5rem)",
+          fontWeight: 800, letterSpacing: "-0.03em",
+        }}>Portfolio</h2>
+      </div>
+    </ScrollReveal>
+
+    <div style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", // Responsive στήλες
+      gridAutoRows: "220px",                                       // Βασικό ύψος σειράς
+      gridAutoFlow: "dense",                                       // Γεμίζει έξυπνα τα κενά
+      gap: "0.75rem",
+    }}>
+      {PORTFOLIO_ITEMS.map((item, i) => (
   <div 
     key={item.id}
     style={{
