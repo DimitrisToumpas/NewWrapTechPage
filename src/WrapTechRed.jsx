@@ -1439,7 +1439,6 @@ function PortfolioCard({ item }) {
         <div style={{
           fontWeight: 600,
           fontSize: "0.95rem",
-          color: "#fff",
           letterSpacing: "-0.01em",
         }}>{item.label}</div>
       </div>
