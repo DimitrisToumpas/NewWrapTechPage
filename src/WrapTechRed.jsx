@@ -1357,7 +1357,6 @@ function ServiceCard({ service }) {
   );
 }
 
-
 function PortfolioCard({ item }) {
   const [hovered, setHovered] = useState(false);
   const isLarge = item.tall;
@@ -1377,8 +1376,7 @@ function PortfolioCard({ item }) {
       style={{
         borderRadius: 12,
         overflow: "hidden",
-        background: patterns[item.id - 1],
-        // Κρατάμε μόνο την εξωτερική σκιά εδώ, αν τη θέλετε
+        background: patterns[(item.id - 1) % patterns.length],
         boxShadow: hovered ? "0 4px 20px rgba(220,38,38,0.15)" : "0 4px 12px rgba(0,0,0,0.1)",
         transition: "all 0.35s ease",
         cursor: "pointer",
@@ -1389,11 +1387,12 @@ function PortfolioCard({ item }) {
         display: "flex", 
         alignItems: "flex-end",
         transform: hovered ? "scale(1.01)" : "scale(1)",
-        willChange: "transform", // Προστασία από θόλωμα στο scale
+        willChange: "transform",
+        boxSizing: "border-box"
       }}
     >
-      {/* Container Φωτογραφίας */}
-      <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
+      {/* 1. Container Φωτογραφίας */}
+      <div style={{ position: "absolute", inset: 0, overflow: "hidden", zIndex: 1 }}>
         <img
           src={item.image}
           alt={item.label}
@@ -1406,38 +1405,26 @@ function PortfolioCard({ item }) {
             transition: "all 0.35s ease",
           }}
         />
-        
-        {/* ΤΟ ΝΕΟ OVERLAY: Αυτό δημιουργεί το περίγραμμα ΠΑΝΩ στη φωτογραφία */}
-        <div style={{
-          position: "absolute",
-          inset: 0,
-          borderRadius: 12,
-          pointerEvents: "none", // Επιτρέπει στα clicks να περνάνε από κάτω
-          boxShadow: hovered
-            ? "inset 0 0 0 2px rgba(220,38,38,0.6)" // 2px έντονο κόκκινο στο hover
-            : "inset 0 0 0 1px rgba(255,255,255,0.1)", // 1px απαλό λευκό κανονικά
-          transition: "box-shadow 0.35s ease",
-          zIndex: 1,
-        }} />
       </div>
       
-      {/* Gradient Σκότους στο κάτω μέρος */}
+      {/* 2. Gradient Σκότους στο κάτω μέρος */}
       <div style={{
         position: "absolute", 
         inset: 0,
-        zIndex: 2, // Πάνω από το περίγραμμα της φωτογραφίας
+        zIndex: 2, 
         background: hovered
           ? "linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 60%)"
           : "linear-gradient(0deg, rgba(0,0,0,0.6) 0%, transparent 80%)",
         transition: "all 0.35s ease",
       }} />
 
-      {/* Container Κειμένου */}
+      {/* 3. Container Κειμένου */}
       <div style={{
         position: "relative", 
-        zIndex: 3, // Πάνω από όλα
+        zIndex: 3, 
         padding: "1.25rem",
         width: "100%",
+        boxSizing: "border-box",
         transform: hovered ? "translateY(0)" : "translateY(4px)",
         transition: "transform 0.35s ease",
       }}>
@@ -1453,6 +1440,7 @@ function PortfolioCard({ item }) {
           border: "1px solid rgba(220,38,38,0.25)",
           marginBottom: "0.5rem",
         }}>{item.tag}</div>
+        
         <div style={{
           fontWeight: 600,
           fontSize: "0.95rem",
@@ -1460,9 +1448,24 @@ function PortfolioCard({ item }) {
           color: "#fff"
         }}>{item.label}</div>
       </div>
+
+      {/* 4. OVERLAY ΠΕΡΙΓΡΑΜΜΑΤΟΣ */}
+      {/* Τοποθετήθηκε τελευταίο με zIndex: 4 για να μην κρύβεται ποτέ η πάνω και κάτω γραμμή */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        borderRadius: 12,
+        pointerEvents: "none", 
+        boxShadow: hovered
+          ? "inset 0 0 0 2px rgba(220,38,38,0.85)" 
+          : "inset 0 0 0 1px rgba(255,255,255,0.15)", 
+        transition: "box-shadow 0.35s ease",
+        zIndex: 4, 
+      }} />
     </div>
   );
 }
+  
 
 function TestimonialCard({ testimonial }) {
   const [hovered, setHovered] = useState(false);
