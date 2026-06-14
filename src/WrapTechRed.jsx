@@ -1535,7 +1535,7 @@ function TestimonialCard({ testimonial }) {
   );
 }
 
-export default function PortfolioTitle() {
+function PortfolioTitle() {
   const [index, setIndex] = useState(0);
 
   const handleClick = () => {
