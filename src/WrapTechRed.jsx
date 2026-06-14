@@ -1075,10 +1075,6 @@ export default function WrapTech() {
         </div>
       </a>
 
-    </div>
-  </ScrollReveal>
-</section>
-
             <div
         style={{
           padding: "2rem",
