@@ -1,8 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/*
+//white fade 
 ::selection {
   background: rgba(255, 255, 255, 0.2);
   color: #ffffff;
+} */
+
+/* dark glass */
+::selection {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ff4d4d;
 }
