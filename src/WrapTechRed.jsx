@@ -1279,9 +1279,11 @@ export default function WrapTech() {
           }
         }
       `}</style>
-</div> 
+</div>
   );
 }
+
+function ServiceCard({ service }) {
 
 function ServiceCard({ service }) {
   const [hovered, setHovered] = useState(false);
