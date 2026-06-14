@@ -911,30 +911,31 @@ export default function WrapTech() {
 
     <div style={{
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", // Κάνει το grid αυτόματα responsive!
-      gridAutoRows: "220px",
-      gridAutoFlow: "dense", // Γεμίζει αυτόματα τα κενά
+      gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", // Responsive στήλες
+      gridAutoRows: "220px",                                       // Βασικό ύψος σειράς
+      gridAutoFlow: "dense",                                       // Γεμίζει έξυπνα τα κενά
       gap: "0.75rem",
     }}>
       {PORTFOLIO_ITEMS.map((item, i) => (
-  <ScrollReveal key={item.id} delay={i * 0.08} direction="none">
-    <div style={{
-      gridRow: item.tall ? "span 2" : "span 1",
-      height: "100%",
-      width: "100%",
-      // Αυτές οι 3 γραμμές λύνουν το πρόβλημα του "καλύμματος":
-      position: "relative",
-      zIndex: item.tall ? 10 : 1, 
-      backgroundColor: "#111" // Ένα background βοηθάει να μην φαίνεται κενό από πίσω
-    }}>
-      <PortfolioCard item={item} />
-    </div>
-  </ScrollReveal>
-))}
-
+        <div 
+          key={item.id}
+          style={{
+            gridRow: item.tall ? "span 2" : "span 1",             // Εδώ δίνουμε τον χώρο στο Grid!
+            height: "100%",
+            width: "100%",
+          }}
+        >
+          <ScrollReveal delay={i * 0.08} direction="none">
+            <div style={{ height: "100%", width: "100%", overflow: "hidden" }}>
+              <PortfolioCard item={item} />
+            </div>
+          </ScrollReveal>
+        </div>
+      ))}
     </div>
   </div>
 </section>
+
         
       {/* ─────────── TESTIMONIALS ─────────── */}
       <section style={{
