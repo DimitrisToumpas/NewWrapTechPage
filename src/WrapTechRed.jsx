@@ -948,7 +948,7 @@ export default function WrapTech() {
         </div>
       ))}
 
-    </div> {/* ✅ THIS WAS MISSING */}
+    </div>
 
   </div>
 </section>
@@ -969,7 +969,7 @@ export default function WrapTech() {
               <h2 style={{
                 fontSize: "clamp(2rem, 4vw, 3.5rem)",
                 fontWeight: 800, letterSpacing: "-0.03em",
-              }}>What They Say</h2>
+              }}>Τι λένε για εμάς</h2>
             </div>
           </ScrollReveal>
 
