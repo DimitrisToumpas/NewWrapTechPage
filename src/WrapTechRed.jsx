@@ -1088,9 +1088,6 @@ export default function WrapTech() {
             <div
         style={{
           padding: "2rem",
-          background: "rgba(255,255,255,0.02)",
-          border: "1px solid rgba(255,255,255,0.06)",
-          borderRadius: "16px",
         }}
       >
         <h3 style={{ color: "#DC2626", marginBottom: "1rem" }}>
