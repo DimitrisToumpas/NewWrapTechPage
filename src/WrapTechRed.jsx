@@ -1450,18 +1450,19 @@ function PortfolioCard({ item }) {
       </div>
 
       {/* 4. OVERLAY ΠΕΡΙΓΡΑΜΜΑΤΟΣ */}
-      {/* Τοποθετήθηκε τελευταίο με zIndex: 4 για να μην κρύβεται ποτέ η πάνω και κάτω γραμμή */}
-      <div style={{
-        position: "absolute",
-        inset: 0,
-        borderRadius: 12,
-        pointerEvents: "none", 
-        boxShadow: hovered
-          ? "inset 0 0 0 2px rgba(220,38,38,0.85)" 
-          : "inset 0 0 0 1px rgba(255,255,255,0.15)", 
-        transition: "box-shadow 0.35s ease",
-        zIndex: 4, 
-      }} />
+      {/* ΤΟ ΔΙΟΡΘΩΜΕΝΟ OVERLAY */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          borderRadius: 12,
+          pointerEvents: "none", 
+          boxShadow: hovered
+            ? "inset 0 0 0 2px rgba(220,38,38,0.95)" // Αυξημένο πάχος και ένταση
+            : "inset 0 0 0 1px rgba(255,255,255,0.2)", 
+          transition: "box-shadow 0.35s ease",
+          zIndex: 4, // <- ΑΛΛΑΓΗ: Από 1 το κάνεις 4 για να βγει πάνω από το μαύρο gradient
+        }} />
+
     </div>
   );
 }
