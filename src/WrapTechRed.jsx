@@ -896,50 +896,62 @@ export default function WrapTech() {
       {/* ─────────── PORTFOLIO ─────────── */}
 <section id="portfolio" style={{ padding: "8rem 2rem" }}>
   <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+    
     <ScrollReveal>
       <div style={{ textAlign: "center", marginBottom: "4rem" }}>
         <div style={{
-          color: "#DC2626", fontSize: "0.75rem", letterSpacing: "0.2em",
-          textTransform: "uppercase", marginBottom: "1rem",
-        }}>Our Work</div>
+          color: "#DC2626",
+          fontSize: "0.75rem",
+          letterSpacing: "0.2em",
+          textTransform: "uppercase",
+          marginBottom: "1rem",
+        }}>
+          Our Work
+        </div>
+
         <h2 style={{
           fontSize: "clamp(2rem, 4vw, 3.5rem)",
-          fontWeight: 800, letterSpacing: "-0.03em",
-        }}>Portfolio</h2>
+          fontWeight: 800,
+          letterSpacing: "-0.03em",
+        }}>
+          Portfolio
+        </h2>
       </div>
     </ScrollReveal>
 
     <div style={{
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", // Responsive στήλες
-      gridAutoRows: "220px",                                       // Βασικό ύψος σειράς
-      gridAutoFlow: "dense",                                       // Γεμίζει έξυπνα τα κενά
+      gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+      gridAutoRows: "220px",
+      gridAutoFlow: "dense",
       gap: "0.75rem",
     }}>
+      
       {PORTFOLIO_ITEMS.map((item, i) => (
-  <div 
-    key={item.id}
-    style={{
-      gridRow: item.tall ? "span 2" : "span 1",
-      height: "100%",
-      width: "100%",
-    }}
-  >
-    {/* Προσθέτουμε style={{ height: "100%" }} στο ScrollReveal αν το υποστηρίζει, 
-        ή σιγουρεύουμε ότι το εσωτερικό div πιάνει όλο το ύψος χωρίς να κόβει τις άκρες */}
-    <ScrollReveal delay={i * 0.08} direction="none" style={{ height: "100%" }}>
-      <div style={{ 
-        height: "100%", 
-        width: "100%", 
-        /* ΑΦΑΙΡΟΥΜΕ το overflow: "hidden" από εδώ γιατί έκοβε το border σου */
-        position: "relative" 
-      }}>
-        <PortfolioCard item={item} />
-      </div>
-    </ScrollReveal>
+        <div
+          key={item.id}
+          style={{
+            gridRow: item.tall ? "span 2" : "span 1",
+            height: "100%",
+            width: "100%",
+          }}
+        >
+          <ScrollReveal delay={i * 0.08} direction="none" style={{ height: "100%" }}>
+            <div style={{
+              height: "100%",
+              width: "100%",
+              position: "relative"
+            }}>
+              <PortfolioCard item={item} />
+            </div>
+          </ScrollReveal>
+        </div>
+      ))}
+
+    </div> {/* ✅ THIS WAS MISSING */}
+
   </div>
-))}
-                                         
+</section>
 
         
       {/* ─────────── TESTIMONIALS ─────────── */}
@@ -1217,15 +1229,7 @@ export default function WrapTech() {
        </span>
        </div>
            
-           {/* <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-          <div style={{
-            width: 28, height: 28, borderRadius: 6,
-            background: "linear-gradient(135deg, #DC2626, #EF4444)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: 12, fontWeight: 900, color: "#000",
-          }}>W</div>
-          <span style={{ fontWeight: 800, fontSize: "0.95rem" }}>WrapTech</span>
-        </div> */}
+          
         
         <div style={{ color: "#444", fontSize: "0.8rem" }}>© 2026 WrapTech. All rights reserved.</div>
         
@@ -1282,9 +1286,7 @@ export default function WrapTech() {
 </div>
   );
 }
-
-function ServiceCard({ service }) {
-
+    
 function ServiceCard({ service }) {
   const [hovered, setHovered] = useState(false);
 
@@ -1362,7 +1364,7 @@ function ServiceCard({ service }) {
       <p style={{ color: "#777", fontSize: "0.9rem", lineHeight: 1.6 }}>{service.desc}</p>
     </div>
   );
-}
+    }
 
 function PortfolioCard({ item }) {
   const [hovered, setHovered] = useState(false);
