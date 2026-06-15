@@ -9,7 +9,7 @@ import interior from "./assets/picsvg_download.svg";
 import wrapInstall from  "./assets/IanWrapTech.jpg";
 import wrapMotorbike from  "./assets/motorbikeWrap.jpg";
 import { Link } from 'react-router-dom';
-
+ 
 const portfolioGreek= [
 "Πορτφόλιο",
 "Έργα",
