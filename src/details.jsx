@@ -35,7 +35,7 @@ export default function ServiceDetailsPage() {
 
           <a
             href="https://new-wrap-tech-page.vercel.app"
-            className="flex items-center gap-2 text-black hover:text-[#2596be] transition"
+            className="flex items-center gap-2 text-black hover:text-RedPublic transition"
           >
             <ArrowLeft size={16} />
             Επιστροφή
