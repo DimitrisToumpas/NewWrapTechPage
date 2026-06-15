@@ -126,25 +126,37 @@ export default function ServiceDetailsPage() {
             </span>
           </a>
 
-          {/* TABS */}
-          <div className="flex bg-white/5 p-1 rounded-xl border border-white/5 overflow-x-auto no-scrollbar">
-
-            <button onClick={() => setActiveService('total-partial')}>
-              Wrap
-            </button>
-
-            <button onClick={() => setActiveService('interior')}>
-              Interior
-            </button>
-
-            <button onClick={() => setActiveService('commercial')}>
-              Ads
-            </button>
-
-            <button onClick={() => setActiveService('ktirio')}>
-              Safety
-            </button>
-
+          {/* SERVICE TABS */} 
+          <div className="flex bg-white/5 p-1 rounded-xl border border-white/5"> 
+            <button onClick={() => setActiveService('total-partial')} 
+              className={px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${ activeService === 'total-partial' 
+                      ? 'bg-[#e53d3d] text-white shadow-lg shadow-[#e53d3d]/20' 
+                      :'text-gray-400 hover:text-white' }} 
+            >Wrap </button> 
+          
+          <button onClick={() => setActiveService('interior')} 
+            className={px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 $
+            { activeService === 'interior' 
+           ? 'bg-[#e53d3d] text-white shadow-lg shadow-[#e53d3d]/20' 
+           : 'text-gray-400 hover:text-white' }} > 
+          Interior 
+        </button> 
+        
+        <button onClick={() => setActiveService('commercial')} 
+          className={px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 $
+          { activeService === 'commercial' 
+          ? 'bg-[#e53d3d] text-white shadow-lg shadow-[#e53d3d]/20' 
+          : 'text-gray-400 hover:text-white' }} > 
+        Ads 
+      </button> 
+      
+      <button onClick={() => setActiveService('ktirio')} 
+        className={px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 $
+        { activeService === 'ktirio' 
+        ? 'bg-[#e53d3d] text-white shadow-lg shadow-[#e53d3d]/20' 
+        : 'text-gray-400 hover:text-white' }} > 
+      Safety & Decor 
+     </button>
           </div>
 
           {/* PHONE */}
