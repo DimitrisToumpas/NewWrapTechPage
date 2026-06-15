@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom';
 import { Car, Paintbrush, Ad , Home , Phone, ArrowLeft, Shield, Sparkles, Clock, CheckCircle2, ChevronDown, MessageSquare } from 'lucide-react';
 
 
-
 export default function ServiceDetailsPage() {
   const { serviceId } = useParams();
   const [activeService, setActiveService] = useState(serviceId || 'total-partial');
