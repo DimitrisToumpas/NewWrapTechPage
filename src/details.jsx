@@ -337,7 +337,7 @@ export default function ServiceDetailsPage() {
       href="tel:+302310304583"
       className="text-[#e53d3d] hover:text-white transition font-semibold"
     >
-      2310 304583
+      Tηλ: 2310 304583
     </a>
 
   </div>
