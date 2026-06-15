@@ -39,7 +39,7 @@ export default function ServiceDetailsPage() {
         <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
 
           <a
-            href="https://wraptech.gr"
+            href="https://new-wrap-tech-page.vercel.app"
             className="flex items-center gap-2 text-slate-400"
           >
             <ArrowLeft size={16} />
