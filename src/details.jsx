@@ -130,6 +130,7 @@ export default function ServiceDetailsPage() {
             >
               Wrap
             </button>
+            
             <button
               onClick={() => setActiveService('interior')}
               className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
@@ -138,6 +139,7 @@ export default function ServiceDetailsPage() {
             >
               Interior
             </button>
+            
             <button
               onClick={() => setActiveService('commercial')}
               className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
@@ -146,14 +148,7 @@ export default function ServiceDetailsPage() {
             >
               Ads
             </button>
-            <button
-              onClick={() => setActiveService('interior')}
-              className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
-                activeService === 'interior' ? 'bg-[#e53d3d] text-white shadow-lg shadow-[#e53d3d]/20' : 'text-gray-400 hover:text-white'
-              }`}
-            >
-              Interior
-            </button>
+         
             <button
               onClick={() => setActiveService('ktirio')}
               className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
