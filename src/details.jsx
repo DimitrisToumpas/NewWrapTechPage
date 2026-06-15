@@ -324,10 +324,26 @@ export default function ServiceDetailsPage() {
 
       </main>
 
-      {/* FOOTER */}
-      <footer className="border-t border-white/5 py-8 text-center text-xs text-gray-600">
-        &copy; {new Date().getFullYear()} Wrap Tech. All rights reserved.
-      </footer>
+    <footer className="border-t border-white/5 py-6">
+
+  <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600">
+
+    {/* LEFT */}
+    <div className="text-center sm:text-left">
+      &copy; {new Date().getFullYear()} Wrap Tech. All rights reserved.
+    </div>
+
+    {/* RIGHT - PHONE */}
+    <a
+      href="tel:+302310304583"
+      className="text-[#e53d3d] hover:text-white transition font-semibold"
+    >
+      2310 304583
+    </a>
+
+  </div>
+
+</footer>
     </div>
   );
 }
