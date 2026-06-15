@@ -107,7 +107,6 @@ export default function ServiceDetailsPage() {
 
   const current = serviceContent[activeService];
 
-  return (
  return (
     <div className="min-h-screen w-full bg-[#0a0a0a] text-gray-100">
 
