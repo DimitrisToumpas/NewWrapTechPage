@@ -109,8 +109,8 @@ export default function ServiceDetailsPage() {
     <div className="min-h-screen w-full bg-[#0a0a0a] text-gray-100 font-sans selection:bg-[#e53d3d] selection:text-white antialiased">
       
       {/* HEADER */}
-      <header className="sticky top-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between flex-wrap gap-4">
+      <header className="max-w-7xl mx-auto px-4 py-3">
+        <div className="flex items-center justify-between mb-3">
           
           <a
             href="https://new-wrap-tech-page.vercel.app"
