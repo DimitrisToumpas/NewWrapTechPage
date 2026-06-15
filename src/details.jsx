@@ -27,7 +27,7 @@ export default function ServiceDetailsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="service-text-red">
       
       {/* HEADER */}
 <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-900">
