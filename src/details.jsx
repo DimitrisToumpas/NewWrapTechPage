@@ -197,11 +197,15 @@ export default function ServiceDetailsPage() {
           <p className="max-w-3xl mx-auto text-gray-400 text-base sm:text-lg leading-relaxed pt-2">
             {current.description}
           </p>
+          
+          {/* 
           <div className="flex justify-center gap-4 pt-6">
             <a href="tel:+302310304583" className="px-6 py-3 bg-[#e53d3d] hover:bg-[#c42f2f] text-white font-bold rounded-xl transition shadow-lg shadow-[#e53d3d]/20 text-sm tracking-wider uppercase">
               Ζητηστε Προσφορα
-            </a>
+            </a> 
           </div>
+          */}
+          
         </div>
       </section>
 
