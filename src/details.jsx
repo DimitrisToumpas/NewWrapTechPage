@@ -46,8 +46,8 @@ export default function ServiceDetailsPage() {
               onClick={() => setActiveService('total-partial')}
               className={`px-3 py-1 rounded font-semibold transition ${
                 activeService === 'total-partial'
-                  ? 'bg-[#2596be] text-white'
-                  : 'text-black hover:text-[#2596be]'
+                  ? 'bg-[#e53d3d] text-white'
+                  : 'text-black hover:text-[#e53d3d]'
               }`}
             >
               Wrap
@@ -57,8 +57,8 @@ export default function ServiceDetailsPage() {
               onClick={() => setActiveService('interior')}
               className={`px-3 py-1 rounded font-semibold transition ${
                 activeService === 'interior'
-                  ? 'bg-[#2596be] text-white'
-                  : 'text-black hover:text-[#2596be]'
+                  ? 'bg-[#e53d3d] text-white'
+                  : 'text-black hover:text-[#e53d3d]'
               }`}
             >
               Interior
@@ -68,8 +68,8 @@ export default function ServiceDetailsPage() {
               onClick={() => setActiveService('commercial')}
               className={`px-3 py-1 rounded font-semibold transition ${
                 activeService === 'commercial'
-                  ? 'bg-[#2596be] text-white'
-                  : 'text-black hover:text-[#2596be]'
+                  ? 'bg-[#e53d3d] text-white'
+                  : 'text-black hover:text-[#e53d3d]'
               }`}
             >
               Ads
@@ -89,7 +89,7 @@ export default function ServiceDetailsPage() {
       {/* HERO */}
       <section className="py-16 text-center border-b border-gray-200">
         <h1 className="text-4xl font-bold">
-          <span className="text-[#2596be]">
+          <span className="text-[#e53d3d]">
             {activeService === 'total-partial' && "Ολική & Μερική Κάλυψη"}
             {activeService === 'interior' && "Εσωτερικές Επενδύσεις"}
             {activeService === 'commercial' && "Διαφημιστική Κάλυψη"}
