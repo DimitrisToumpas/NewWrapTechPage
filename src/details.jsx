@@ -130,7 +130,7 @@ export default function ServiceDetailsPage() {
 
         {/* FAQ */}
         <section className="space-y-4">
-          <h2 className="text-xl font-bold border-l-4 border-[#e53d3d] pl-3">
+          <h2 className="text-RedPublic font-bold border-l-4 border-[#e53d3d] pl-3">
             FAQ
           </h2>
 
