@@ -1267,8 +1267,6 @@ export default function WrapTech() {
           
         
         <div style={{ color: "#444", fontSize: "0.8rem" }}>© 2026 WrapTech. All rights reserved.</div>
-
-           https://share.google/kacKTfhbmqvG6RWdi
         
         <div style={{ display: "flex", gap: "1.5rem" }}>
 
@@ -1301,7 +1299,7 @@ export default function WrapTech() {
   </Link>
 
   <a
-    href="https://instagram.com"
+    href="https://www.instagram.com/wraptech.gr/"
     target="_blank"
     rel="noopener noreferrer"
     style={{
