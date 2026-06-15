@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Car, Paintbrush, ShieldCheck, ChevronRight, CheckCircle2, Phone, ArrowLeft, Sparkles, Megaphone, HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { useParams, Link } from 'react-router-dom';
 
 export default function ServiceDetailsPage() {
-  // Tabs: 'total-partial', 'interior', 'commercial'
-  const [activeService, setActiveService] = useState('total-partial');
+  const { serviceId } = useParams(); // Παίρνει το id από το URL
+  const [activeService, setActiveService] = useState(serviceId || 'total-partial');
+}
 
   // FAQ Accordion State
   const [openFaq, setOpenFaq] = useState(null);
