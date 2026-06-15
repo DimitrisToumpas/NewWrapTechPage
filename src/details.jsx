@@ -29,7 +29,7 @@ export default function ServiceDetailsPage() {
   // Δεδομένα ανάλογα με την επιλεγμένη υπηρεσία
   const serviceContent = {
     'total-partial': {
-      title: "Ολική & Μερική Κάλυψη",
+      title: "Ολικη & Μερικη Καλυψη",
       subtitle: "TOTAL & PARTIAL CAR WRAPPING",
       description: "Αλλάξτε πλήρως ή μερικώς την εμφάνιση του οχήματός σας με τις κορυφαίες μεμβράνες της αγοράς. Επιλέξτε ανάμεσα σε gloss, matte, satin, chrome ή color-shifting αποχρώσεις και δώστε μοναδικό χαρακτήρα στο αυτοκίνητό σας, προστατεύοντας παράλληλα την εργοστασιακή του βαφή.",
       icon: <Car className="text-[#e53d3d]" size={32} />,
@@ -47,7 +47,7 @@ export default function ServiceDetailsPage() {
       ]
     },
     'interior': {
-      title: "Εσωτερικές Επενδύσεις",
+      title: "Εσωτερικες Επενδυσεις",
       subtitle: "INTERIOR RESTYLING & PROTECTION",
       description: "Αναβαθμίστε την καμπίνα του οχήματός σας αντικαθιστώντας τις φθαρμένες ή βαρετές επιφάνειες. Χρησιμοποιούμε εξειδικευμένες premium μεμβράνες με υφές όπως Carbon Fiber, Brushed Aluminum, Piano Black ή Wood Grain για ένα απόλυτα custom εσωτερικό.",
       icon: <Paintbrush className="text-[#e53d3d]" size={32} />,
@@ -57,15 +57,34 @@ export default function ServiceDetailsPage() {
         { title: "Προστασία Anti-Scratch", desc: "Ιδανικό για την προστασία ευαίσθητων επιφανειών όπως το Piano Black." },
         { title: "Custom Λεπτομέρειες", desc: "Εφαρμογή σε κονσόλα, ταμπλό, πόρτες και οποιοδήποτε σταθερό low-wear τμήμα." }
       ],
-      steps: [
+         steps: [
         { num: "01", title: "Ανάλυση & Σχεδιασμός", desc: "Επιλογή της κατάλληλης υφής που δένει με το σαλόνι του αυτοκινήτου." },
         { num: "02", title: "Προετοιμασία Surfaces", desc: "Σχολαστικός καθαρισμός θυλάκων και γωνιών από σκόνη και σιλικόνες." },
         { num: "03", title: "Micro-Wrapping", desc: "Εφαρμογή ακριβείας με ειδικά εργαλεία για άψογα κοψίματα χωρίς κενά." },
         { num: "04", title: "Συναρμολόγηση", desc: "Επανατοποθέτηση των trims και τελικός έλεγχος λειτουργικότητας των κουμπιών." }
       ]
     },
+      'ktirio': {
+      title: "Ασφαλειας κτηριων & Διακοσμησης επιπλων η συσκευων",
+      subtitle: "BUILDING PROTECTION & FERNITURE RESTYLING",
+      description: "Οι μεμβράνες ασφαλείας ενισχύουν τα τζάμια, προσφέροντας προστασία από χτυπήματα και συγκρατώντας τα θραύσματα σε περίπτωση θραύσης. Παράλληλα, οι διακοσμητικές μεμβράνες δίνουν νέα αισθητική σε έπιπλα και συσκευές, με μεγάλη ποικιλία χρωμάτων, σχεδίων και υφών. Αποτελούν μια πρακτική και οικονομική λύση ανανέωσης χώρων χωρίς αντικατάσταση εξοπλισμού. Συνδυάζουν ασφάλεια, αντοχή και σύγχρονο σχεδιασμό για κάθε επαγγελματικό ή οικιακό περιβάλλον."
+      ,
+      icon: <Paintbrush className="text-[#e53d3d]" size={32} />,
+     features: [
+    {title: "Ενισχυμένη Προστασία", desc: "Οι μεμβράνες ασφαλείας ενισχύουν τα τζάμια και αυξάνουν την αντοχή τους σε χτυπήματα."},
+    {title: "Συγκράτηση Θραυσμάτων",desc: "Σε περίπτωση θραύσης, τα κομμάτια του γυαλιού παραμένουν συγκρατημένα για μεγαλύτερη ασφάλεια."},
+    {title: "Αισθητική Ανανέωση",desc: "Μεγάλη ποικιλία χρωμάτων, σχεδίων και υφών για αναβάθμιση επίπλων και συσκευών."},
+    {title: "Οικονομική Λύση",desc: "Ανανεώστε τον χώρο σας χωρίς την ανάγκη αντικατάστασης επίπλων ή εξοπλισμού."}
+      ],
+     steps: [
+  {num: "01",title: "Μελέτη Χώρου", desc: "Αξιολόγηση των επιφανειών και επιλογή της κατάλληλης μεμβράνης σύμφωνα με τις ανάγκες ασφάλειας ή διακόσμησης."},
+  {num: "02",title: "Προετοιμασία Επιφανειών", desc: "Σχολαστικός καθαρισμός των τζαμιών, επίπλων ή συσκευών για άριστη πρόσφυση της μεμβράνης."},
+  {num: "03",title: "Εφαρμογή Μεμβράνης", desc: "Τοποθέτηση με εξειδικευμένες τεχνικές για άψογο φινίρισμα χωρίς φυσαλίδες ή ατέλειες."},
+  {num: "04",title: "Τελικός Έλεγχος", desc: "Έλεγχος της εφαρμογής και των λεπτομερειών για μέγιστη αντοχή, αισθητική και λειτουργικότητα."}
+]
+    },
     'commercial': {
-      title: "Διαφημιστική Κάλυψη",
+      title: "Διαφημιστικη Καλυψη",
       subtitle: "COMMERCIAL VEHICLE BRANDING",
       description: "Μετατρέψτε τον εταιρικό σας στόλο στο πιο αποτελεσματικό, κινούμενο μέσο διαφήμισης. Από απλά cut-out γράμματα και λογότυπα μέχρι πλήρη ψηφιακή εκτύπωση (full wrap), σχεδιάζουμε και εφαρμόζουμε λύσεις που θα απογειώσουν την αναγνωρισιμότητα της επιχείρησής σας.",
       icon: <MessageSquare className="text-[#e53d3d]" size={32} />,
@@ -98,7 +117,7 @@ export default function ServiceDetailsPage() {
             className="flex items-center gap-2 text-gray-400 hover:text-[#e53d3d] transition-colors duration-300 group"
           >
             <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-            <span className="font-medium text-sm tracking-wider uppercase">Επιστροφή</span>
+            <span className="font-medium text-sm tracking-wider uppercase">Επιστροφη</span>
           </a>
 
           {/* SERVICE TABS */}
@@ -127,6 +146,26 @@ export default function ServiceDetailsPage() {
             >
               Ads
             </button>
+            <button
+              onClick={() => setActiveService('interior')}
+              className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
+                activeService === 'interior' ? 'bg-[#e53d3d] text-white shadow-lg shadow-[#e53d3d]/20' : 'text-gray-400 hover:text-white'
+              }`}
+            >
+              Interior
+            </button>
+            <button
+              onClick={() => setActiveService('ktirio')}
+              className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
+                activeService === 'ktirio' ? 'bg-[#e53d3d] text-white shadow-lg shadow-[#e53d3d]/20' : 'text-gray-400 hover:text-white'
+              }`}
+            >
+              Safety & Decor
+            </button>
+
+
+
+            
           </div>
 
           <a
@@ -166,7 +205,7 @@ export default function ServiceDetailsPage() {
           <div className="text-center md:text-left space-y-2">
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white uppercase flex items-center justify-center md:justify-start gap-3">
               {current.icon}
-              Πλεονεκτήματα Υπηρεσίας
+              Πλεονεκτηματα Υπηρεσιας
             </h2>
             <p className="text-gray-500 text-sm">Γιατί να επιλέξετε τη συγκεκριμένη premium επεξεργασία.</p>
           </div>
@@ -191,7 +230,7 @@ export default function ServiceDetailsPage() {
         <section className="space-y-12">
           <div className="text-center space-y-2">
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white uppercase">
-              Η Διαδικασία Μας
+              Η Διαδικασια Μας
             </h2>
             <p className="text-gray-500 text-sm">Πώς φτάνουμε στο απόλυτο, εργοστασιακό αποτέλεσμα βήμα-βήμα.</p>
           </div>
@@ -214,7 +253,7 @@ export default function ServiceDetailsPage() {
         <section className="max-w-3xl mx-auto space-y-8">
           <div className="text-center space-y-2">
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white uppercase">
-              Συχνές Ερωτήσεις
+              Συχνες Ερωτησεις
             </h2>
             <p className="text-gray-500 text-sm">Λύστε κάθε σας απορία σχετικά με τις μεμβράνες.</p>
           </div>
@@ -258,7 +297,7 @@ export default function ServiceDetailsPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(229,61,61,0.12)_0%,transparent_60%)]" />
           <div className="relative max-w-2xl mx-auto space-y-6">
             <h2 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">
-              Έτοιμοι να μεταμορφώσετε το όχημά σας;
+              Ετοιμοι να μεταμορφωσετε το οχημα σας;
             </h2>
             <p className="text-gray-400 text-sm sm:text-base">
               Ελάτε σε επαφή μαζί μας σήμερα για μια δωρεάν μελέτη κοστολόγησης προσαρμοσμένη στις δικές σας ανάγκες.
