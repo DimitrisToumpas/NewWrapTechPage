@@ -255,6 +255,5 @@ export default function ServiceDetailsPage() {
         </section>
 
       </main>
-    </div>
   );
 }    
