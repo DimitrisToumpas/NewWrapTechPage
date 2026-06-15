@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Car, Paintbrush, Ad , House, Phone, ArrowLeft, Shield, Sparkles, Clock, CheckCircle2, ChevronDown, MessageSquare } from 'lucide-react';
+import { Car, Paintbrush, Ad , Home , Phone, ArrowLeft, Shield, Sparkles, Clock, CheckCircle2, ChevronDown, MessageSquare } from 'lucide-react';
 
 
 
@@ -71,7 +71,7 @@ export default function ServiceDetailsPage() {
       subtitle: "BUILDING PROTECTION & FERNITURE RESTYLING",
       description: "Οι μεμβράνες ασφαλείας ενισχύουν τα τζάμια, προσφέροντας προστασία από χτυπήματα και συγκρατώντας τα θραύσματα σε περίπτωση θραύσης. Παράλληλα, οι διακοσμητικές μεμβράνες δίνουν νέα αισθητική σε έπιπλα και συσκευές, με μεγάλη ποικιλία χρωμάτων, σχεδίων και υφών. Αποτελούν μια πρακτική και οικονομική λύση ανανέωσης χώρων χωρίς αντικατάσταση εξοπλισμού. Συνδυάζουν ασφάλεια, αντοχή και σύγχρονο σχεδιασμό για κάθε επαγγελματικό ή οικιακό περιβάλλον."
       ,
-      icon: <House className="text-[#e53d3d]" size={32} />,
+      icon: <Home className="text-[#e53d3d]" size={32} />,
      features: [
     {title: "Ενισχυμένη Προστασία", desc: "Οι μεμβράνες ασφαλείας ενισχύουν τα τζάμια και αυξάνουν την αντοχή τους σε χτυπήματα."},
     {title: "Συγκράτηση Θραυσμάτων",desc: "Σε περίπτωση θραύσης, τα κομμάτια του γυαλιού παραμένουν συγκρατημένα για μεγαλύτερη ασφάλεια."},
