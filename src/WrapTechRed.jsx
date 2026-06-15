@@ -1281,7 +1281,7 @@ export default function WrapTech() {
     onMouseEnter={(e) => (e.target.style.color = "#DC2626")}
     onMouseLeave={(e) => (e.target.style.color = "#555")}
   >
-     
+     Privacy
   </Link>
 
   <Link
