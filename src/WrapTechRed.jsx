@@ -8,6 +8,7 @@ import audi from "./assets/audi-4.png";
 import interior from "./assets/picsvg_download.svg";
 import wrapInstall from  "./assets/IanWrapTech.jpg";
 import wrapMotorbike from  "./assets/motorbikeWrap.jpg";
+import { Link } from 'react-router-dom';
 
 const portfolioGreek= [
 "Πορτφόλιο",
@@ -152,18 +153,21 @@ const SERVICES = [
     title: "Μεμβράνες Αλλαγής Χρώματος",
     desc: "Ολική – Μερική κάλυψη οχημάτων, Εσωτερικών επενδύσεων οχημάτων, Διαφημιστική κάλυψη οχημάτων, PPF",
     tag: "Popular",
+    slug: "total-partial",
   },
  {
     icon: carInterior,
     title: "Best Car Wrapping Services",
     desc: "Περιποίηση & Ηλεκτροστατική βαφή ζαντών.",
     tag: "Detail",
+    slug: "interior"
   },
   {
     icon: interior,
     title: "Εφαρμογές Κτηρίων",
     desc: "Εξειδικευμένες λύσεις μεμβρανών που συνδυάζουν κομψότητα και προστασία. Οι μεμβράνες ασφαλείας ενισχύουν τα τζάμια ενάντια σε χτυπήματα. Ενώ οι διακοσμητικές μεμβράνες ανανεώνουν ριζικά έπιπλα και συσκευές. Μια ολοκληρωμένη αναβάθμιση για κάθε χώρο.",
     tag: "Spaces",
+    slug: "ktiria"
   },
 ];
 
@@ -836,45 +840,60 @@ export default function WrapTech() {
         </div>
       </section>
 
-      {/* ─────────── SERVICES ─────────── */}
-      <section id="services" style={{
-        padding: "8rem 2rem",
-        position: "relative",
-      }}>
+
+{/* ─────────── SERVICES ─────────── */}
+<section id="services" style={{
+  padding: "8rem 2rem",
+  position: "relative",
+}}>
+  <div style={{
+    position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
+    width: "60%", height: 1,
+    background: "linear-gradient(90deg, transparent, rgba(220,38,38,0.3), transparent)",
+  }} />
+
+  <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+    <ScrollReveal>
+      <div style={{ textAlign: "center", marginBottom: "4rem" }}>
         <div style={{
-          position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
-          width: "60%", height: 1,
-          background: "linear-gradient(90deg, transparent, rgba(220,38,38,0.3), transparent)",
-        }} />
+          color: "#DC2626", fontSize: "0.75rem", letterSpacing: "0.2em",
+          textTransform: "uppercase", marginBottom: "1rem",
+        }}>What We Do</div>
+        <h2 style={{
+          fontSize: "clamp(2rem, 4vw, 3.5rem)",
+          fontWeight: 800,
+          letterSpacing: "-0.03em",
+        }}>Υπηρεσίες</h2>
+      </div>
+    </ScrollReveal>
 
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <ScrollReveal>
-            <div style={{ textAlign: "center", marginBottom: "4rem" }}>
-              <div style={{
-                color: "#DC2626", fontSize: "0.75rem", letterSpacing: "0.2em",
-                textTransform: "uppercase", marginBottom: "1rem",
-              }}>What We Do</div>
-              <h2 style={{
-                fontSize: "clamp(2rem, 4vw, 3.5rem)",
-                fontWeight: 800,
-                letterSpacing: "-0.03em",
-              }}>Υπηρεσίες</h2>
-            </div>
-          </ScrollReveal>
-
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            gap: "1.5rem",
-          }}>
-            {SERVICES.map((s, i) => (
-              <ScrollReveal key={i} delay={i * 0.1}>
-                <ServiceCard service={s} />
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+      gap: "1.5rem",
+    }}>
+      {SERVICES.map((s, i) => (
+        <ScrollReveal key={i} delay={i * 0.1}>
+          {/* 
+            Το Link τυλίγει την κάρτα. 
+            Όταν ο χρήστης πατάει, πηγαίνει π.χ. στο /services/total-partial 
+          */}
+          <Link 
+            to={`/services/${s.slug}`} 
+            style={{ 
+              textDecoration: "none", 
+              color: "inherit",
+              display: "block" 
+            }}
+            onClick={() => window.scrollTo(0, 0)} /* Reset scroll για τη νέα σελίδα */
+          >
+            <ServiceCard service={s} />
+          </Link>
+        </ScrollReveal>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ─────────── STATS ─────────── */}
       <section style={{
