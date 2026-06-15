@@ -324,16 +324,15 @@ export default function ServiceDetailsPage() {
 
       </main>
 
-    <footer className="border-t border-white/5 py-6">
-
-  <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600">
+<footer className="border-t border-white/5 py-6">
+  <div className="max-w-7xl mx-auto px-4 flex items-center justify-between text-xs text-gray-600">
 
     {/* LEFT */}
-    <div className="text-center sm:text-left">
+    <div>
       &copy; {new Date().getFullYear()} Wrap Tech. All rights reserved.
     </div>
 
-    {/* RIGHT - PHONE */}
+    {/* RIGHT */}
     <a
       href="tel:+302310304583"
       className="text-[#e53d3d] hover:text-white transition font-semibold"
@@ -342,7 +341,6 @@ export default function ServiceDetailsPage() {
     </a>
 
   </div>
-
 </footer>
     </div>
   );
