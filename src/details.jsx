@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Car, Paintbrush, Phone, ArrowLeft, Shield, Sparkles, Clock, CheckCircle2, ChevronDown, MessageSquare } from 'lucide-react';
+import { Car, Paintbrush, Ad , House, Phone, ArrowLeft, Shield, Sparkles, Clock, CheckCircle2, ChevronDown, MessageSquare } from 'lucide-react';
 
 
 
@@ -71,7 +71,7 @@ export default function ServiceDetailsPage() {
       subtitle: "BUILDING PROTECTION & FERNITURE RESTYLING",
       description: "Οι μεμβράνες ασφαλείας ενισχύουν τα τζάμια, προσφέροντας προστασία από χτυπήματα και συγκρατώντας τα θραύσματα σε περίπτωση θραύσης. Παράλληλα, οι διακοσμητικές μεμβράνες δίνουν νέα αισθητική σε έπιπλα και συσκευές, με μεγάλη ποικιλία χρωμάτων, σχεδίων και υφών. Αποτελούν μια πρακτική και οικονομική λύση ανανέωσης χώρων χωρίς αντικατάσταση εξοπλισμού. Συνδυάζουν ασφάλεια, αντοχή και σύγχρονο σχεδιασμό για κάθε επαγγελματικό ή οικιακό περιβάλλον."
       ,
-      icon: <Paintbrush className="text-[#e53d3d]" size={32} />,
+      icon: <House className="text-[#e53d3d]" size={32} />,
      features: [
     {title: "Ενισχυμένη Προστασία", desc: "Οι μεμβράνες ασφαλείας ενισχύουν τα τζάμια και αυξάνουν την αντοχή τους σε χτυπήματα."},
     {title: "Συγκράτηση Θραυσμάτων",desc: "Σε περίπτωση θραύσης, τα κομμάτια του γυαλιού παραμένουν συγκρατημένα για μεγαλύτερη ασφάλεια."},
@@ -85,11 +85,11 @@ export default function ServiceDetailsPage() {
   {num: "04",title: "Τελικός Έλεγχος", desc: "Έλεγχος της εφαρμογής και των λεπτομερειών για μέγιστη αντοχή, αισθητική και λειτουργικότητα."}
 ]
     },
-    'commercial': {
+    '': {
       title: "Διαφημιστικη Καλυψη",
       subtitle: "COMMERCIAL VEHICLE BRANDING",
       description: "Μετατρέψτε τον εταιρικό σας στόλο στο πιο αποτελεσματικό, κινούμενο μέσο διαφήμισης. Από απλά cut-out γράμματα και λογότυπα μέχρι πλήρη ψηφιακή εκτύπωση (full wrap), σχεδιάζουμε και εφαρμόζουμε λύσεις που θα απογειώσουν την αναγνωρισιμότητα της επιχείρησής σας.",
-      icon: <MessageSquare className="text-[#e53d3d]" size={32} />,
+      icon: <Ad className="text-[#e53d3d]" size={32} />,
       features: [
         { title: "Κινούμενη Διαφήμιση", desc: "Χιλιάδες ιμπρέσιονς καθημερινά στους δρόμους με ένα fixed εφάπαξ κόστος." },
         { title: "Εταιρική Ταυτότητα", desc: "Απόλυτη χρωματική πιστότητα με τα λογότυπα και το brand σας." },
@@ -153,7 +153,7 @@ export default function ServiceDetailsPage() {
   <button
     onClick={() => setActiveService('commercial')}
     className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
-      activeService === 'commercial'
+      activeService === ''
         ? 'bg-[#e53d3d] text-white shadow-lg shadow-[#e53d3d]/20'
         : 'text-gray-400 hover:text-white'
     }`}
