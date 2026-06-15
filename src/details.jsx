@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Car, Paintbrush, Phone, ArrowLeft, Shield, Sparkles, Clock, CheckCircle2, ChevronDown, MessageSquare } from 'lucide-react';
 
+
+
 export default function ServiceDetailsPage() {
   const { serviceId } = useParams();
   const [activeService, setActiveService] = useState(serviceId || 'total-partial');
@@ -106,72 +108,87 @@ export default function ServiceDetailsPage() {
   const current = serviceContent[activeService];
 
   return (
-    <div className="min-h-screen w-full bg-[#0a0a0a] text-gray-100 font-sans selection:bg-[#e53d3d] selection:text-white antialiased">
-      
-      {/* HEADER */}
-      <header className="max-w-7xl mx-auto px-4 py-3">
-        <div className="flex items-center justify-between mb-3">
-          
-          <a
-            href="https://new-wrap-tech-page.vercel.app"
-            className="flex items-center gap-2 text-gray-400 hover:text-[#e53d3d] transition-colors duration-300 group"
-          >
-            <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-            <span className="font-medium text-sm tracking-wider uppercase">Επιστροφη</span>
-          </a>
+<header className="sticky top-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5">
 
-          {/* SERVICE TABS */}
-          <div className="flex bg-white/5 p-1 rounded-xl border border-white/5">
-            <button
-              onClick={() => setActiveService('total-partial')}
-              className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
-                activeService === 'total-partial' ? 'bg-[#e53d3d] text-white shadow-lg shadow-[#e53d3d]/20' : 'text-gray-400 hover:text-white'
-              }`}
-            >
-              Wrap
-            </button>
-            
-            <button
-              onClick={() => setActiveService('interior')}
-              className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
-                activeService === 'interior' ? 'bg-[#e53d3d] text-white shadow-lg shadow-[#e53d3d]/20' : 'text-gray-400 hover:text-white'
-              }`}
-            >
-              Interior
-            </button>
-            
-            <button
-              onClick={() => setActiveService('commercial')}
-              className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
-                activeService === 'commercial' ? 'bg-[#e53d3d] text-white shadow-lg shadow-[#e53d3d]/20' : 'text-gray-400 hover:text-white'
-              }`}
-            >
-              Ads
-            </button>
-         
-            <button
-              onClick={() => setActiveService('ktirio')}
-              className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
-                activeService === 'ktirio' ? 'bg-[#e53d3d] text-white shadow-lg shadow-[#e53d3d]/20' : 'text-gray-400 hover:text-white'
-              }`}
-            >
-              Safety & Decor
-            </button>
+  <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
 
+    {/* LEFT - BACK */}
+    <a
+      href="https://new-wrap-tech-page.vercel.app"
+      className="flex items-center text-gray-400 hover:text-[#e53d3d] transition"
+    >
+      <ArrowLeft size={18} />
+      <span className="hidden sm:inline ml-2 text-sm font-medium uppercase">
+        Επιστροφη
+      </span>
+    </a>
 
+    {/* CENTER - TABS */}
+    <div className="flex bg-white/5 p-1 rounded-xl border border-white/5 overflow-x-auto no-scrollbar">
 
-            
-          </div>
+      <button
+        onClick={() => setActiveService('total-partial')}
+        className={`px-2 sm:px-4 py-2 rounded-lg text-[10px] sm:text-sm font-semibold uppercase whitespace-nowrap transition ${
+          activeService === 'total-partial'
+            ? 'bg-[#e53d3d] text-white'
+            : 'text-gray-400'
+        }`}
+      >
+        Wrap
+      </button>
 
-          <a
-            href="tel:+302310304583"
-            className="flex items-center gap-2 bg-[#e53d3d]/10 hover:bg-[#e53d3d] text-[#e53d3d] hover:text-white border border-[#e53d3d]/20 px-4 py-2 rounded-xl transition-all duration-300 font-semibold text-sm"
-          >
-            <Phone size={14} />
-            2310 304583
-          </a>
-        </div>
-      </header>
+      <button
+        onClick={() => setActiveService('interior')}
+        className={`px-2 sm:px-4 py-2 rounded-lg text-[10px] sm:text-sm font-semibold uppercase whitespace-nowrap transition ${
+          activeService === 'interior'
+            ? 'bg-[#e53d3d] text-white'
+            : 'text-gray-400'
+        }`}
+      >
+        Interior
+      </button>
+
+      <button
+        onClick={() => setActiveService('commercial')}
+        className={`px-2 sm:px-4 py-2 rounded-lg text-[10px] sm:text-sm font-semibold uppercase whitespace-nowrap transition ${
+          activeService === 'commercial'
+            ? 'bg-[#e53d3d] text-white'
+            : 'text-gray-400'
+        }`}
+      >
+        Ads
+      </button>
+
+      <button
+        onClick={() => setActiveService('ktirio')}
+        className={`px-2 sm:px-4 py-2 rounded-lg text-[10px] sm:text-sm font-semibold uppercase whitespace-nowrap transition ${
+          activeService === 'ktirio'
+            ? 'bg-[#e53d3d] text-white'
+            : 'text-gray-400'
+        }`}
+      >
+        Safety
+      </button>
+
+    </div>
+
+    {/* RIGHT - PHONE */}
+    <a
+      href="tel:+302310304583"
+      className="flex items-center gap-1 sm:gap-2 bg-[#e53d3d]/10 hover:bg-[#e53d3d]
+                 text-[#e53d3d] hover:text-white
+                 border border-[#e53d3d]/20
+                 px-2 sm:px-4 py-2 rounded-xl
+                 transition font-semibold"
+    >
+      <Phone size={14} />
+      <span className="hidden sm:inline text-sm">
+        2310 304583
+      </span>
+    </a>
+
+  </div>
+</header>
 
       {/* HERO SECTION WITH CINEMATIC OVERLAY */}
       <section className="relative overflow-hidden py-24 lg:py-32 border-b border-white/5 bg-gradient-to-b from-[#111] to-[#0a0a0a]">
