@@ -1,6 +1,6 @@
 import React from "react";
 
-
+ 
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white px-6 py-16">
