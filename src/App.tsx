@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ServiceDetailsPage from './ServiceDetailsPage';
+import ServiceDetailsPage from './details.jsx';
 import Main from './WrapTechRed';
 
 export default function App() {
