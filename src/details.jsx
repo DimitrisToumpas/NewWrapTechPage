@@ -78,7 +78,7 @@ export default function ServiceDetailsPage() {
 
           <a
             href="tel:+302310304583"
-            className="flex items-center gap-2 text-black hover:text-[#2596be]"
+            className="flex items-center gap-2 text-black hover:text-[#e53d3d]"
           >
             <Phone size={14} />
             2310 304583
@@ -103,7 +103,7 @@ export default function ServiceDetailsPage() {
         {/* WRAP */}
         {activeService === 'total-partial' && (
           <section>
-            <div className="flex items-center gap-2 text-[#2596be] font-semibold">
+            <div className="flex items-center gap-2 text-[#e53d3d] font-semibold">
               <Car size={24} />
               <span>Car Wrapping</span>
             </div>
@@ -117,7 +117,7 @@ export default function ServiceDetailsPage() {
         {/* INTERIOR */}
         {activeService === 'interior' && (
           <section>
-            <div className="flex items-center gap-2 text-[#2596be] font-semibold">
+            <div className="flex items-center gap-2 text-[#e53d3d] font-semibold">
               <Paintbrush size={24} />
               <span>Interior Restyling</span>
             </div>
@@ -130,7 +130,7 @@ export default function ServiceDetailsPage() {
 
         {/* FAQ */}
         <section className="space-y-4">
-          <h2 className="text-xl font-bold border-l-4 border-[#2596be] pl-3">
+          <h2 className="text-xl font-bold border-l-4 border-[#e53d3d] pl-3">
             FAQ
           </h2>
 
@@ -141,7 +141,7 @@ export default function ServiceDetailsPage() {
             >
               <button
                 onClick={() => toggleFaq(index)}
-                className="w-full text-left font-medium hover:text-[#2596be]"
+                className="w-full text-left font-medium hover:text-[#e53d3d]"
               >
                 {faq.q}
               </button>
