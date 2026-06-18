@@ -152,7 +152,7 @@ export default function ServiceDetailsPage() {
   <button
     onClick={() => setActiveService('commercial')}
     className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 ${
-      activeService === ''
+      activeService === 'commercial'
         ? 'bg-[#e53d3d] text-white shadow-lg shadow-[#e53d3d]/20'
         : 'text-gray-400 hover:text-white'
     }`}
