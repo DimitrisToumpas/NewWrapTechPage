@@ -57,7 +57,6 @@ const CookieBanner = () => {
 };
 
 const styles = {
-  bannerContainer: {
     bannerContainer: {
     position: 'fixed',
     bottom: '20px',
