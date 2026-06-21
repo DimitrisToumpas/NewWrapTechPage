@@ -58,15 +58,18 @@ const CookieBanner = () => {
 
 const styles = {
   bannerContainer: {
+    bannerContainer: {
     position: 'fixed',
     bottom: '20px',
     left: '50%',
     transform: 'translateX(-50%)',
-    backgroundColor: '#111111',
-    border: '1px solid #ff0033',
+    backgroundColor: 'rgba(17, 17, 17, 0.75)', // Ημιδιαφανές μαύρο (75% opacity)
+    backdropFilter: 'blur(10px)', // Το εφέ του θολού γυαλιού (glass effect)
+    WebkitBackdropFilter: 'blur(10px)', // Υποστήριξη για Safari browsers
+    border: '1px solid rgba(255, 0, 51, 0.3)', // Πιο soft, ημιδιαφανές κόκκινο border για να δένει με το γυαλί
     borderRadius: '8px',
     padding: '20px',
-    boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.7)',
+    boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.6)',
     zIndex: 1000,
     width: '90%',
     maxWidth: '700px',
